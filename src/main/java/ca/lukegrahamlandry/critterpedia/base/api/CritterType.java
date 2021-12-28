@@ -10,15 +10,15 @@ import java.util.function.Supplier;
 
 public class CritterType {
     public final ResourceLocation id;
-    public final CritterCategory category;
+    public final ResourceLocation category;
     private Supplier<Item> icon;
     private Supplier<EntityType> entity;
 
-    public CritterType(String id, CritterCategory category){
+    public CritterType(String id, ResourceLocation category){
         this(id.contains(":") ? new ResourceLocation(id) : new ResourceLocation(ModMain.MOD_ID, id), category);
     }
 
-    public CritterType(ResourceLocation id, CritterCategory category){
+    public CritterType(ResourceLocation id, ResourceLocation category){
         this.id = id;
         this.category = category;
     }
@@ -36,6 +36,10 @@ public class CritterType {
 
     public Item getIcon(){
         return this.icon.get();
+    }
+
+    public CritterCategory getCategory(){
+        return Critters.getCategory(this.category);
     }
 
     public boolean contains(Entity creature){

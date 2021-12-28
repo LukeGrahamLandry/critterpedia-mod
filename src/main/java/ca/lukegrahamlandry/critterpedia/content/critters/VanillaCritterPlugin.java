@@ -17,7 +17,7 @@ import java.util.List;
 public class VanillaCritterPlugin implements CritterPlugin {
     private static final List<CritterType> critters = new ArrayList<>();
 
-    private CritterType make(String id, CritterCategory category, Item icon){
+    private CritterType make(String id, ResourceLocation category, Item icon){
         CritterType t = new CritterType(new ResourceLocation("minecraft", id), category).icon(icon);
         critters.add(t);
         return t;
@@ -27,8 +27,8 @@ public class VanillaCritterPlugin implements CritterPlugin {
     public List<CritterType> getTypes() {
         critters.clear();
 
-        CritterCategory FISH = Critters.getCategory("minecraft:fish");
-        CritterCategory BIRD = Critters.getCategory("minecraft:bird");
+        ResourceLocation FISH = new ResourceLocation("minecraft:fish");
+        ResourceLocation BIRD = new ResourceLocation("minecraft:bird");
 
         make("cod", FISH, Items.COD).entity(EntityType.COD);
         make("salmon", FISH, Items.SALMON).entity(EntityType.SALMON);
