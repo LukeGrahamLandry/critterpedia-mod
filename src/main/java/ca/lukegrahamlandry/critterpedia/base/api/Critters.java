@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Critters {
-    private static HashMap<ResourceLocation, CritterCategory> categories = new HashMap<>();
-    private static HashMap<ResourceLocation, CritterType> critters = new HashMap<>();
+    private static final HashMap<ResourceLocation, CritterCategory> categories = new HashMap<>();
+    private static final HashMap<ResourceLocation, CritterType> critters = new HashMap<>();
 
     public static void register(CritterPlugin plugin){
         // TODO: check config to allow disabling plugins by id

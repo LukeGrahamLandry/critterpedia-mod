@@ -1,4 +1,4 @@
-package ca.lukegrahamlandry.critterpedia.content.critters;
+package ca.lukegrahamlandry.critterpedia.content;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.base.api.CritterCategory;

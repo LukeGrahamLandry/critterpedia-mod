@@ -1,7 +1,7 @@
 package ca.lukegrahamlandry.critterpedia;
 
 import ca.lukegrahamlandry.critterpedia.base.api.Critters;
-import ca.lukegrahamlandry.critterpedia.content.critters.VanillaCritterPlugin;
+import ca.lukegrahamlandry.critterpedia.content.VanillaCritterPlugin;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

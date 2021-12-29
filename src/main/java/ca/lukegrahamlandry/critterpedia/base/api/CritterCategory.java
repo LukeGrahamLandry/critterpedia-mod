@@ -8,13 +8,11 @@ import java.util.HashMap;
 import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
-public class CritterCategory {
-    public final ResourceLocation id;
-    private Supplier<Item> icon;
+public class CritterCategory extends IDHasIcon{
     public final String pickupType;
 
     public CritterCategory(ResourceLocation id, String pickupType){
-        this.id = id;
+        super(id);
         this.pickupType = pickupType;
     }
 
@@ -22,13 +20,11 @@ public class CritterCategory {
         this(id.contains(":") ? new ResourceLocation(id) : new ResourceLocation(ModMain.MOD_ID, id), pickupType);
     }
 
-    public CritterCategory icon(Item icon){
-        this.icon = () -> icon;
-        return this;
+    @Override
+    public CritterCategory icon(Item icon) {
+        return (CritterCategory) super.icon(icon);
     }
 
-    public Item getIcon(){
-        return this.icon.get();
-    }
-
+    // END BUILDER
+    
 }

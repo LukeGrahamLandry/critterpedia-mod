@@ -1,5 +1,9 @@
+# Critterpedia Mod
+
 - forge 1.18.1
-- commissioned by
+- commissioned by Keaka
+
+A minecraft mod that makes collecting animals more rewarding.
 
 ## The Plan
 
@@ -27,7 +31,7 @@ hashmap of subtypes (entity type rl) to critter type id rl
 so you can getCritterFor(EntityType) -> CritterType
 
 world data should save for each player a Map<CritterTypeRL> -> List<SubTypeRL> for all caught to show in critterpedia
-then just add to that whenever someone picks up something that has a CritterType.
+then just add to that whenever someone picks up something that has a CritterType. (mixin to Bucketable#bucketMobPickup for vanilla fish)
 world data just to be safe so it cant get to big by accident and "book ban" people
 
 mod compatibility 
