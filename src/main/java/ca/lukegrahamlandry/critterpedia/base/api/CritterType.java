@@ -7,13 +7,14 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
 
 public class CritterType extends IDHasIcon {
     public final ResourceLocation category;
-    private Set<Supplier<EntityType>> entities;
+    private Set<Supplier<EntityType>> entities = new HashSet<>();
     private Map<ResourceLocation, Subtype> subtypes = new HashMap<>();
     private boolean hasCustomSubtypes = false;
 
