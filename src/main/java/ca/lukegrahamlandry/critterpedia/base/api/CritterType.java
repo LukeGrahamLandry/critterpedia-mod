@@ -61,8 +61,12 @@ public class CritterType extends IDHasIcon {
     }
 
     public boolean contains(Entity creature){
+        System.out.println(creature);
         for (Supplier<EntityType> check : this.entities){
-            if (check.get().equals(creature.getType())) return true;
+            if (check.get().equals(creature.getType())) {
+                System.out.println("thing");
+                return true;
+            }
         }
 
         return false;

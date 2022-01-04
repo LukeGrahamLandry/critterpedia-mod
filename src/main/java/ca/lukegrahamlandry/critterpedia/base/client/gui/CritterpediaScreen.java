@@ -4,8 +4,12 @@ import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.base.api.CritterCategory;
 import ca.lukegrahamlandry.critterpedia.base.api.CritterType;
 import ca.lukegrahamlandry.critterpedia.base.api.Critters;
+import ca.lukegrahamlandry.critterpedia.base.capability.CritterCapability;
+import ca.lukegrahamlandry.critterpedia.base.capability.CritterCollection;
+import ca.lukegrahamlandry.critterpedia.base.capability.CritterCollectionImpl;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -37,6 +41,8 @@ public class CritterpediaScreen extends Screen {
     protected void init() {
         super.init();
 
+        CritterCollection collected = Minecraft.getInstance().player.getCapability(CritterCapability.CAP).orElse(new CritterCollectionImpl());
+
         int i = (this.width - this.imageWidth) / 2;
         int j = (this.height - this.imageHeight) / 2;
         int startX = 9 + i;
@@ -48,10 +54,11 @@ public class CritterpediaScreen extends Screen {
             int x = startX + (rowPos * squareSize);
             int y = startY + (colPos * squareSize);
 
-            if (critter.category.equals(this.selectedCategory)){
-                buttons.add(new IconButton(x, y, squareSize, squareSize, (b) -> this.onItemButtonPress(critter.id), critter.getIcon(), (button, stack, X, Y) -> {
+            if (critter.category.equals(this.selectedCategory) && collected.hasCritter(critter.id)){
+                IconButton critterButton = new IconButton(x, y, squareSize, squareSize, (b) -> this.onItemButtonPress(critter.id), critter.getIcon(), (button, stack, X, Y) -> {
                     this.renderTooltip(stack, new TextComponent(critter.id.toString()), X, Y);
-                }, critter.id.equals(this.selectedCritter)));
+                }, critter.id.equals(this.selectedCritter));
+                buttons.add(critterButton);
 
                 rowPos++;
                 if (rowPos >= rowLength){

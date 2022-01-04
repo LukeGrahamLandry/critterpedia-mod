@@ -33,8 +33,6 @@ public class ModMain {
         EntityInit.ENTITY.register(modEventBus);
 
         modEventBus.addListener(ModMain::mobAttributes);
-        modEventBus.addListener(ModMain::initCaps);
-        modEventBus.addListener(ModMain::registerCaps);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -48,13 +46,5 @@ public class ModMain {
         }
     }
 
-    public static void initCaps(AttachCapabilitiesEvent<Entity> event){
-        if (event.getObject() instanceof Player){
-            event.addCapability(new ResourceLocation(ModMain.MOD_ID, "collected_critters"), new CritterCapability());
-        }
-    }
 
-    public static void registerCaps(RegisterCapabilitiesEvent event) {
-        event.register(CritterCollection.class);
-    }
 }

@@ -36,6 +36,7 @@ public class Critters {
 
     public static CritterType getCritter(Entity creature){
         for (CritterType critter : critters.values()){
+            System.out.println(critter.id);
             if (critter.contains(creature)) return critter;
         }
 

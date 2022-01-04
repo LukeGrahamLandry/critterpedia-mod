@@ -2,10 +2,12 @@ buildscript {
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
         maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -14,7 +16,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '0.01'
-group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = 'ca.lukegrahamlandry.critterpedia' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'critterpedia'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
@@ -51,6 +53,8 @@ minecraft {
             // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
 
+            arg "-mixin.config=critterpedia.mixins.json"
+
             // jvmArgs(["-Dfml.earlyprogresswindow=false", "-Dorg.lwjgl.librarypath=/Users/luke/Downloads/m1-multimc-hack-fix-forge/lwjglnatives"])
             // You can set various levels here.
             // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
@@ -72,6 +76,8 @@ minecraft {
             // "REGISTRIES": For firing of registry events.
             // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
+
+            arg "-mixin.config=critterpedia.mixins.json"
 
             // Recommended logging level for the console
             // You can set various levels here.
@@ -130,6 +136,7 @@ dependencies {
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.18.1-39.0.8'
+    annotationProcessor 'org.spongepowered:mixin:0.8:processor'
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
@@ -153,7 +160,8 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "luke",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs": "critterpedia.mixins.json"
         ])
     }
 }
@@ -175,6 +183,12 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+}
+
+apply plugin: 'org.spongepowered.mixin'
+
+mixin {
+    add sourceSets.main, "critterpedia.refmap.json"
 }
 
 apply from: 'applesilicon.gradle'
