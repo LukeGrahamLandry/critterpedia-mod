@@ -23,6 +23,12 @@ public class VanillaCritterPlugin implements CritterPlugin {
         return t;
     }
 
+    private CritterType make(String id, ResourceLocation category, EntityType icon){
+        CritterType t = new CritterType(new ResourceLocation("minecraft", id), category).icon(() -> icon);
+        critters.add(t);
+        return t;
+    }
+
     @Override
     public List<CritterType> getTypes() {
         critters.clear();

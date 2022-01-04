@@ -1,6 +1,7 @@
 package ca.lukegrahamlandry.critterpedia.base.api;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -48,6 +49,11 @@ public class CritterType extends IDHasIcon {
         return (CritterType) super.icon(icon);
     }
 
+    @Override
+    public CritterType icon(Supplier<EntityType> icon) {
+        return (CritterType) super.icon(icon);
+    }
+
     // END BUILDER
 
     public CritterCategory getCategory(){
@@ -76,6 +82,10 @@ public class CritterType extends IDHasIcon {
         }
 
         return this.subtypes.get(typeRL);
+    }
+
+    public interface RenderCritterIcon {
+        void render(PoseStack matrix, int x, int y);
     }
 
     /* HOW TO USE: 2021/12/28

@@ -1,31 +1,27 @@
 package ca.lukegrahamlandry.critterpedia.base.client.gui;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
+import ca.lukegrahamlandry.critterpedia.base.api.CritterType;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
-public class ItemButton extends Button {
-    private static final ResourceLocation BACKGROUND = new ResourceLocation(ModMain.MOD_ID, "textures/gui/critterpedia_general.png");
+public class IconButton extends Button {
+    public static final ResourceLocation BACKGROUND = new ResourceLocation(ModMain.MOD_ID, "textures/gui/critterpedia_general.png");
 
-    Item item;
+    public CritterType.RenderCritterIcon icon;
     public boolean pressed = false;
-    private final ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
 
-    public ItemButton(int x, int y, int width, int height, OnPress action, Item item, OnTooltip tooltip) {
+    public IconButton(int x, int y, int width, int height, OnPress action, CritterType.RenderCritterIcon icon, OnTooltip tooltip, boolean pressed) {
         super(x, y, width, height, new TextComponent(""), action, tooltip);
-        this.item = item;
+        this.icon = icon;
+        this.pressed = pressed;
     }
-
 
     public void renderButton(PoseStack stack, int mouseX, int mouseY, float tick) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -38,7 +34,7 @@ public class ItemButton extends Button {
         }
 
         this.blit(stack, this.x, this.y, 195, topY, 18, 18); // 212, this.pressed ? 17 : 35
-        this.itemRenderer.renderAndDecorateItem(new ItemStack(this.item), this.x, this.y);
+        this.icon.render(stack, this.x, this.y);
 
         if (this.isHoveredOrFocused()) {
             this.renderToolTip(stack, mouseX, mouseY);
