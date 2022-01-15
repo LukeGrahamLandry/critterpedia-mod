@@ -4,6 +4,7 @@ import ca.lukegrahamlandry.critterpedia.base.api.Critters;
 import ca.lukegrahamlandry.critterpedia.base.capability.CritterCapability;
 import ca.lukegrahamlandry.critterpedia.base.capability.CritterCollection;
 import ca.lukegrahamlandry.critterpedia.content.VanillaCritterPlugin;
+import ca.lukegrahamlandry.critterpedia.content.entity.FlyEntity;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -21,6 +22,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+import software.bernie.geckolib3.GeckoLib;
 
 @Mod(ModMain.MOD_ID)
 public class ModMain {
@@ -28,11 +30,12 @@ public class ModMain {
 
     public ModMain() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         modEventBus.addListener(this::setup);
-
+        GeckoLib.initialize();
         EntityInit.ENTITY.register(modEventBus);
-
         modEventBus.addListener(ModMain::mobAttributes);
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -44,6 +47,8 @@ public class ModMain {
         for (String rl : EntityInit.bats){
             event.put((EntityType<? extends LivingEntity>) ForgeRegistries.ENTITIES.getValue(new ResourceLocation(ModMain.MOD_ID, rl)), Bat.createAttributes().build());
         }
+
+        event.put(EntityInit.FLY.get(), FlyEntity.createAttributes().build());
     }
 
 

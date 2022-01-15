@@ -13,6 +13,6 @@ public class ModdedBatEntity extends Bat {
     @Override
     public void tick() {
         super.tick();
-        this.setResting(true);
+        // this.setResting(true);
     }
 }

@@ -2,6 +2,7 @@ package ca.lukegrahamlandry.critterpedia.content.client;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.client.models.ModdedBatModel;
+import ca.lukegrahamlandry.critterpedia.content.client.render.FlyGeoRender;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
 import ca.lukegrahamlandry.critterpedia.content.client.render.ModdedBatRender;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -25,6 +26,8 @@ public class ClientSetup {
         for (String rl : EntityInit.bats){
             byRL(rl, (ctx) -> new ModdedBatRender(ctx, (ctxx) -> new ModdedBatModel(ctxx, rl)));
         }
+
+        EntityRenderers.register(EntityInit.FLY.get(), FlyGeoRender::new);
     }
 
     public static void byRL(String registryName, EntityRendererProvider renderer){
