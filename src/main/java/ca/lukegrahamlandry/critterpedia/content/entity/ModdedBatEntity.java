@@ -9,4 +9,10 @@ public class ModdedBatEntity extends Bat {
     public ModdedBatEntity(EntityType<? extends ModdedBatEntity> p_27412_, Level p_27413_) {
         super(p_27412_, p_27413_);
     }
+
+    @Override
+    public void tick() {
+        super.tick();
+        this.setResting(true);
+    }
 }

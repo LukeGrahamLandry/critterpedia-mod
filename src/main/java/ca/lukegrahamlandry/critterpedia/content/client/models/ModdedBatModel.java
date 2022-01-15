@@ -71,20 +71,20 @@ public class ModdedBatModel extends EntityModel<ModdedBatEntity> {
 
         if (entity.isResting()){
             boolean isWeird = entity.getType().getRegistryName().getPath().equals("hoary_bat") || entity.getType().getRegistryName().getPath().equals("big_eared_bat");
-            this.RightWing.zRot = - (degree * 5.0F) * f1 * 0.5F;
 
-            this.RightWingTwo.yRot = - (degree * 5.0F) * f1 * 0.5F;
-
-            this.RightWing.yRot = - (degree * 1.0F) * f1 * 0.5F;
-            this.LeftWing.zRot = - (degree * -5.0F) * f1 * 0.5F;
-            this.LeftWingTwo.yRot = - (degree * -5.0F) * f1 * 0.5F;
-            this.LeftWing.yRot = - (degree * -1.0F) * f1 * 0.5F;
 
             if (isWeird) {
-                this.RightWingTwo.yRot *= 0;
-                this.LeftWingTwo.yRot *= 0;
-                this.RightWingTwo.zRot = -1;
-                this.LeftWingTwo.zRot = 1;
+                // gotta do animation
+
+            } else {
+                this.RightWing.zRot = - (degree * 5.0F) * f1 * 1;
+                this.LeftWing.zRot = - (degree * -5.0F) * f1 * 1;
+
+                this.RightWing.yRot = - (degree * 1.0F) * f1 * 1F;
+                this.LeftWing.yRot = - (degree * -1.0F) * f1 * 1;
+
+                this.RightWingTwo.yRot = - (degree * 5.0F) * f1 * 1.2F;
+                this.LeftWingTwo.yRot = - (degree * -5.0F) * f1 * 1.2F;
             }
 
         } else {

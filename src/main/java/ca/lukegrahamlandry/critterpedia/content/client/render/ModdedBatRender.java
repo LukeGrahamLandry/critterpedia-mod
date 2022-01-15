@@ -24,8 +24,17 @@ public class ModdedBatRender extends MobRenderer<ModdedBatEntity, ModdedBatModel
     protected void setupRotations(ModdedBatEntity bat, PoseStack stack, float p_115319_, float p_115320_, float p_115321_) {
         super.setupRotations(bat, stack, p_115319_, p_115320_, p_115321_);
         if (bat.isResting()){
-            stack.mulPose(Vector3f.XN.rotationDegrees(180));
-            stack.translate(0, -1, 0);
+            stack.translate(0, 0.5, 0);
+
+            String name = bat.getType().getRegistryName().getPath();
+            if (name.equals("hammer_head_bat") || name.equals("eastern_red_bat")){
+                stack.translate(0, 0, 0.5);
+            }
+            if (name.equals("speckled_flying_fox")){
+                stack.translate(0, 0, -0.75);
+            }
+            stack.mulPose(Vector3f.XN.rotationDegrees(90));
+
         }
     }
 
