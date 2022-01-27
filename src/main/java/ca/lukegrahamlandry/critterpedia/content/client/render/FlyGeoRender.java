@@ -9,13 +9,12 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.example.entity.GeoExampleEntity;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class FlyGeoRender extends GeoEntityRenderer<FlyEntity> {
     public FlyGeoRender(EntityRendererProvider.Context renderManager) {
         super(renderManager, new FlyGeoModel());
-        this.shadowRadius = 0.1F;
+        this.shadowRadius = 0.8F;
     }
 
     @Override

@@ -1,7 +1,11 @@
 package ca.lukegrahamlandry.critterpedia.content.client;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
+import ca.lukegrahamlandry.critterpedia.content.client.models.BowheadGuitarFishModel;
+import ca.lukegrahamlandry.critterpedia.content.client.models.FloridaHogFishModel;
 import ca.lukegrahamlandry.critterpedia.content.client.models.ModdedBatModel;
+import ca.lukegrahamlandry.critterpedia.content.client.render.BowheadGuitarFishRender;
+import ca.lukegrahamlandry.critterpedia.content.client.render.FloridaHogFishRender;
 import ca.lukegrahamlandry.critterpedia.content.client.render.FlyGeoRender;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
 import ca.lukegrahamlandry.critterpedia.content.client.render.ModdedBatRender;
@@ -28,6 +32,8 @@ public class ClientSetup {
         }
 
         EntityRenderers.register(EntityInit.FLY.get(), FlyGeoRender::new);
+        EntityRenderers.register(EntityInit.BOW_HEAD_GUITAR_FISH.get(), BowheadGuitarFishRender::new);
+        EntityRenderers.register(EntityInit.FLORIDA_HOG_FISH.get(), FloridaHogFishRender::new);
     }
 
     public static void byRL(String registryName, EntityRendererProvider renderer){
@@ -39,6 +45,8 @@ public class ClientSetup {
         for (String rl : EntityInit.bats){
             makeLayer(event, rl, ModdedBatModel.getModelFor(rl));
         }
+        event.registerLayerDefinition(FloridaHogFishModel.LAYER_LOCATION, FloridaHogFishModel::createBodyLayer);
+        event.registerLayerDefinition(BowheadGuitarFishModel.LAYER_LOCATION, BowheadGuitarFishModel::createBodyLayer);
     }
 
     public static void makeLayer(EntityRenderersEvent.RegisterLayerDefinitions event, String registryName, Supplier<LayerDefinition> supplier){

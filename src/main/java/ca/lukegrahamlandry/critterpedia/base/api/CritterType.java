@@ -28,7 +28,6 @@ public class CritterType extends IDHasIcon {
         this.category = category;
     }
 
-    // either use this OR subtypes
     public CritterType entity(EntityType entity){
         this.entities.add(() -> entity);
         return this;

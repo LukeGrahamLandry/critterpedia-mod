@@ -41,7 +41,6 @@ public class VanillaCritterPlugin implements CritterPlugin {
         make("pufferfish", FISH, Items.PUFFERFISH).entity(EntityType.PUFFERFISH);
         make("tropical_fish", FISH, Items.TROPICAL_FISH).entity(EntityType.TROPICAL_FISH);
 
-
         make("parrot", BIRD, Items.RED_DYE).entity(EntityType.PARROT);
         make("chicken", BIRD, Items.FEATHER).entity(EntityType.CHICKEN);
 

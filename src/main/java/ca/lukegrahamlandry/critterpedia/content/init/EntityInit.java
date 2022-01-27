@@ -2,6 +2,7 @@ package ca.lukegrahamlandry.critterpedia.content.init;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.entity.FlyEntity;
+import ca.lukegrahamlandry.critterpedia.content.entity.ModFishEntity;
 import ca.lukegrahamlandry.critterpedia.content.entity.ModdedBatEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -15,6 +16,8 @@ public class EntityInit {
     public static final String[] bats = new String[]{"speckled_flying_fox", "eastern_red_bat", "hammer_head_bat", "hoary_bat", "big_eared_bat"};
 
     public static RegistryObject<EntityType<FlyEntity>> FLY = ENTITY.register("fly", () -> EntityType.Builder.of(FlyEntity::new, MobCategory.CREATURE).sized(0.9F, 1F).build("fly"));
+    public static RegistryObject<EntityType<ModFishEntity>> FLORIDA_HOG_FISH = ENTITY.register("florida_hog_fish", () -> EntityType.Builder.of(ModFishEntity::new, MobCategory.CREATURE).sized(0.9F, 0.9F).build("florida_hog_fish"));
+    public static RegistryObject<EntityType<ModFishEntity>> BOW_HEAD_GUITAR_FISH = ENTITY.register("bow_head_guitar_fish", () -> EntityType.Builder.of(ModFishEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("bow_head_guitar_fish"));
 
     static {
         for (String rl : bats){
