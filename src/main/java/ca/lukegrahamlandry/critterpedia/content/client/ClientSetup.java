@@ -4,11 +4,8 @@ import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.client.models.BowheadGuitarFishModel;
 import ca.lukegrahamlandry.critterpedia.content.client.models.FloridaHogFishModel;
 import ca.lukegrahamlandry.critterpedia.content.client.models.ModdedBatModel;
-import ca.lukegrahamlandry.critterpedia.content.client.render.BowheadGuitarFishRender;
-import ca.lukegrahamlandry.critterpedia.content.client.render.FloridaHogFishRender;
-import ca.lukegrahamlandry.critterpedia.content.client.render.FlyGeoRender;
+import ca.lukegrahamlandry.critterpedia.content.client.render.*;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
-import ca.lukegrahamlandry.critterpedia.content.client.render.ModdedBatRender;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -32,6 +29,7 @@ public class ClientSetup {
         }
 
         EntityRenderers.register(EntityInit.FLY.get(), FlyGeoRender::new);
+        EntityRenderers.register(EntityInit.MANTA_RAY.get(), MantaRayGeoRender::new);
         EntityRenderers.register(EntityInit.BOW_HEAD_GUITAR_FISH.get(), BowheadGuitarFishRender::new);
         EntityRenderers.register(EntityInit.FLORIDA_HOG_FISH.get(), FloridaHogFishRender::new);
     }

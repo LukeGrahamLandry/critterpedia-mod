@@ -24,5 +24,6 @@ public class ModMobAttributes {
         event.put(EntityInit.FLY.get(), FlyEntity.createAttributes().build());
         event.put(EntityInit.FLORIDA_HOG_FISH.get(), AbstractFish.createAttributes().build());
         event.put(EntityInit.BOW_HEAD_GUITAR_FISH.get(), AbstractFish.createAttributes().build());
+        event.put(EntityInit.MANTA_RAY.get(), AbstractFish.createAttributes().build());
     }
 }

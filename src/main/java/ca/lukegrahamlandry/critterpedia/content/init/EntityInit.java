@@ -2,6 +2,7 @@ package ca.lukegrahamlandry.critterpedia.content.init;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.entity.FlyEntity;
+import ca.lukegrahamlandry.critterpedia.content.entity.MantaRayEntity;
 import ca.lukegrahamlandry.critterpedia.content.entity.ModFishEntity;
 import ca.lukegrahamlandry.critterpedia.content.entity.ModdedBatEntity;
 import net.minecraft.world.entity.EntityType;
@@ -18,6 +19,7 @@ public class EntityInit {
     public static RegistryObject<EntityType<FlyEntity>> FLY = ENTITY.register("fly", () -> EntityType.Builder.of(FlyEntity::new, MobCategory.CREATURE).sized(0.9F, 1F).build("fly"));
     public static RegistryObject<EntityType<ModFishEntity>> FLORIDA_HOG_FISH = ENTITY.register("florida_hog_fish", () -> EntityType.Builder.of(ModFishEntity::new, MobCategory.CREATURE).sized(0.9F, 0.9F).build("florida_hog_fish"));
     public static RegistryObject<EntityType<ModFishEntity>> BOW_HEAD_GUITAR_FISH = ENTITY.register("bow_head_guitar_fish", () -> EntityType.Builder.of(ModFishEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("bow_head_guitar_fish"));
+    public static RegistryObject<EntityType<MantaRayEntity>> MANTA_RAY = ENTITY.register("manta_ray", () -> EntityType.Builder.of(MantaRayEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("manta_ray"));
 
     static {
         for (String rl : bats){
