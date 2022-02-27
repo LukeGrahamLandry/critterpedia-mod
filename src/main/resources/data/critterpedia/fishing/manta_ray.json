@@ -1,0 +1,7 @@
+{
+  "rod": ["critterpedia:large_rod"],
+  "item": "critterpedia:placeable_manta_ray",
+  "critter": "critterpedia:manta_ray",
+  "rarity": "uncommon",
+  "weight": 1
+}
