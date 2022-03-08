@@ -24,11 +24,16 @@ public class FishingManager extends SimpleJsonResourceReloadListener {
 
     // todo: these should be not static and gotten from level.getServer().getServerResources() somehow
     public static Map<ResourceLocation, FishingOption> options = new HashMap<>();
-    public static Map<ResourceLocation, WeightedRandomList<FishingOption>> wightedOptionsByRod = new HashMap<>();
+    public static Map<ResourceLocation, WeightedRandomList<FishingOption>>  wightedOptionsByRod = new HashMap<>();
+
+    public static Map<ResourceLocation, FishingRarity> rarities = new HashMap<>();
 
     public FishingManager() {
         super(GSON, "fishing");
     }
+
+    // todo: clearing every apply seems like a bad idea cause it might run another time for each data pack
+    // so instead the WeightedRandomList should be another map so it just overwrites when it loads another
 
     protected void apply(Map<ResourceLocation, JsonElement> p_44037_, ResourceManager p_44038_, ProfilerFiller p_44039_) {
         options.clear();
@@ -47,7 +52,7 @@ public class FishingManager extends SimpleJsonResourceReloadListener {
                 if (data.has("critter")){
                     option.triggeredCritter = rl(data.get("critter"));
                 } else {
-                    LOGGER.info("fishing option {} does not trigger a critter", name);
+                    option.triggeredCritter = name;
                 }
 
                 ResourceLocation item = rl(data.get("item"));
@@ -58,7 +63,18 @@ public class FishingManager extends SimpleJsonResourceReloadListener {
                     continue;
                 }
 
-                option.rarity = data.has("rarity") ? rl(data.get("rarity")) : new ResourceLocation("common");
+                if (data.has("rarity")){
+                    if (rarities.containsKey(rl(data.get("rarity")))){
+                        option.rarity = rl(data.get("rarity"));
+                    } else {
+                        LOGGER.error("skipping fishing option {}, undefined rarity {}", name, rl(data.get("rarity")));
+                        continue;
+                    }
+                } else {
+                    LOGGER.error("skipping fishing option {}, no rarity", name);
+                    continue;
+                }
+
                 option.setWeight(data.has("weight") ? data.get("weight").getAsInt() : 1);
 
                 for (JsonElement rod : data.get("rod").getAsJsonArray()){
@@ -83,7 +99,7 @@ public class FishingManager extends SimpleJsonResourceReloadListener {
         return new ResourceLocation(obj.getAsString());
     }
 
-    // todo: consider biome, etc which will require manually looping through all options to generate the list for that circumstance 
+    // todo: consider biome, etc which will require manually looping through all options to generate the list for that circumstance
     static Random rand = new Random();
     public static FishingOption getFish(ResourceLocation rod){
         Optional<FishingOption> result = wightedOptionsByRod.get(rod).getRandom(rand);

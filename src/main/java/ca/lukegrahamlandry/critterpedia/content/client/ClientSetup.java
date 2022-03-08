@@ -10,6 +10,7 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.FishingHookRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -32,6 +33,10 @@ public class ClientSetup {
         EntityRenderers.register(EntityInit.MANTA_RAY.get(), MantaRayGeoRender::new);
         EntityRenderers.register(EntityInit.BOW_HEAD_GUITAR_FISH.get(), BowheadGuitarFishRender::new);
         EntityRenderers.register(EntityInit.FLORIDA_HOG_FISH.get(), FloridaHogFishRender::new);
+
+
+        // the string renders wrong
+        EntityRenderers.register(EntityInit.BOBBER.get(), FishingHookRenderer::new);
     }
 
     public static void byRL(String registryName, EntityRendererProvider renderer){

@@ -1,7 +1,6 @@
 {
   "rod": ["critterpedia:large_rod"],
-  "item": "critterpedia:placeable_manta_ray",
+  "item": "minecraft:diamond",
   "critter": "critterpedia:manta_ray",
-  "rarity": "uncommon",
-  "weight": 1
+  "rarity": "uncommon"
 }

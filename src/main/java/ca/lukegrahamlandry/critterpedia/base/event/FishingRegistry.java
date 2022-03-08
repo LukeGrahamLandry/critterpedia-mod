@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 public class FishingRegistry {
     @SubscribeEvent
     public static void initCaps(AddReloadListenerEvent event){
+        System.out.println("reload listener");
         event.addListener(new FishingManager());
     }
 }

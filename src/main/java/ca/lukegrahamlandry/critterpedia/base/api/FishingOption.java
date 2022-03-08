@@ -14,7 +14,7 @@ public class FishingOption implements WeightedEntry {
     public final ResourceLocation id;
     protected ResourceLocation triggeredCritter;
     protected ResourceLocation fishItem;
-    protected ResourceLocation rarity;
+    protected ResourceLocation rarity; // must be set TODO
     private Weight weight;
 
     public FishingOption(ResourceLocation id) {
@@ -25,6 +25,10 @@ public class FishingOption implements WeightedEntry {
         List<ItemStack> items = new ArrayList<>();
         items.add(new ItemStack(ForgeRegistries.ITEMS.getValue(fishItem)));
         return items;
+    }
+
+    public ResourceLocation getRarity(){
+        return this.rarity;
     }
 
     protected void setWeight(int w){

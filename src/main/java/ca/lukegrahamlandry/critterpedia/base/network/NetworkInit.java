@@ -17,5 +17,7 @@ public class NetworkInit {
         INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation(ModMain.MOD_ID, "packets"), () -> "1.0", s -> true, s -> true);
 
         // INSTANCE.registerMessage(nextID(), OpenCritterpediaPacket.class, OpenCritterpediaPacket::toBytes, OpenCritterpediaPacket::new, OpenCritterpediaPacket::handle);
+        INSTANCE.registerMessage(nextID(), StartFishingMiniGamePacket.class, StartFishingMiniGamePacket::encode, StartFishingMiniGamePacket::decode, StartFishingMiniGamePacket::handle);
+        INSTANCE.registerMessage(nextID(), EndFishingMiniGamePacket.class, EndFishingMiniGamePacket::encode, EndFishingMiniGamePacket::decode, EndFishingMiniGamePacket::handle);
     }
 }
