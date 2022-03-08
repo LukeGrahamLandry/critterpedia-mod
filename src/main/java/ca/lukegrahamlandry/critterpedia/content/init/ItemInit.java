@@ -1,18 +1,12 @@
 package ca.lukegrahamlandry.critterpedia.content.init;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
-import ca.lukegrahamlandry.critterpedia.content.entity.FlyEntity;
-import ca.lukegrahamlandry.critterpedia.content.entity.MantaRayEntity;
-import ca.lukegrahamlandry.critterpedia.content.entity.ModFishEntity;
-import ca.lukegrahamlandry.critterpedia.content.entity.ModdedBatEntity;
 import ca.lukegrahamlandry.critterpedia.content.item.LiveFishItem;
 import ca.lukegrahamlandry.critterpedia.content.item.ModFishingRod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.MobBucketItem;
 import net.minecraft.world.level.material.Fluid;
@@ -43,15 +37,15 @@ public class ItemInit {
         for (ResourceLocation fish : EntityInit.smallFish){
             Supplier<? extends EntityType<?>> entitySupplier = () -> ForgeRegistries.ENTITIES.getValue(fish);
             Supplier<? extends SoundEvent> sound = () -> SoundEvents.BUCKET_FILL_FISH;
-            smallFishBuckets.put(fish, ITEM.register(fish.getPath() + "_bucket", () -> new MobBucketItem(entitySupplier, WATER, sound, new Item.Properties().stacksTo(0))));
+            smallFishBuckets.put(fish, ITEM.register(fish.getPath() + "_bucket", () -> new MobBucketItem(entitySupplier, WATER, sound, new Item.Properties().stacksTo(0).tab(ModCreativeTab.fish))));
 
             makeFish(fish);
         }
     }
 
     private static void makeFish(ResourceLocation fish){
-        rawFish.put(fish, ITEM.register("raw_" + fish.getPath(), () -> new Item(new Item.Properties())));
-        cookedFish.put(fish, ITEM.register("cooked_" + fish.getPath(), () -> new Item(new Item.Properties())));
-        liveFish.put(fish, ITEM.register("live_" + fish.getPath(), () -> new LiveFishItem(fish, new Item.Properties().durability(20*20))));
+        rawFish.put(fish, ITEM.register("raw_" + fish.getPath(), () -> new Item(new Item.Properties().tab(ModCreativeTab.fish))));
+        cookedFish.put(fish, ITEM.register("cooked_" + fish.getPath(), () -> new Item(new Item.Properties().tab(ModCreativeTab.fish))));
+        liveFish.put(fish, ITEM.register("live_" + fish.getPath(), () -> new LiveFishItem(fish, new Item.Properties().durability(20*20).tab(ModCreativeTab.fish))));
     }
 }

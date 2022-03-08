@@ -31,7 +31,6 @@ public class LiveFishItem extends Item {
         this.entityTypeId = entityTypeId;
     }
 
-
     public InteractionResult useOn(UseOnContext p_43223_) {
         Level level = p_43223_.getLevel();
         if (!(level instanceof ServerLevel)) {
