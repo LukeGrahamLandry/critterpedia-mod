@@ -411,12 +411,10 @@ public class TriggerGuiFishingHook extends FishingHook {
                 this.level.broadcastEntityEvent(this, (byte)31);
                 i = this.hookedIn instanceof ItemEntity ? 3 : 5;
             } else if (this.nibble > 0) {
-
+                FishingGameHandler.triggerOpenGUI((ServerPlayer) player, this.rodType);
 
                 i = 1;
             }
-            // TODO move back into, else if (this.nibble > 0) {
-            FishingGameHandler.triggerOpenGUI((ServerPlayer) player, this.rodType);
 
             if (this.onGround) {
                 i = 2;
