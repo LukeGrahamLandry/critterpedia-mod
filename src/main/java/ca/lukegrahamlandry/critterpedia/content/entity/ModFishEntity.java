@@ -1,5 +1,8 @@
 package ca.lukegrahamlandry.critterpedia.content.entity;
 
+import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
+import ca.lukegrahamlandry.critterpedia.content.init.ItemInit;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -20,7 +23,8 @@ public class ModFishEntity extends AbstractSchoolingFish {
     }
 
     public ItemStack getBucketItemStack() {
-        return new ItemStack(Items.SALMON_BUCKET);
+        ResourceLocation id = this.getType().getRegistryName();
+        return new ItemStack(ItemInit.smallFishBuckets.getOrDefault(id, ItemStack.EMPTY::getItem).get());
     }
 
     protected SoundEvent getAmbientSound() {

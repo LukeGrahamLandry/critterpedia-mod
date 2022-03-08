@@ -2,11 +2,18 @@ package ca.lukegrahamlandry.critterpedia.content.init;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.entity.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class EntityInit {
     public static final DeferredRegister<EntityType<?>> ENTITY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModMain.MOD_ID);
@@ -20,7 +27,12 @@ public class EntityInit {
     public static RegistryObject<EntityType<ModFishEntity>> BOW_HEAD_GUITAR_FISH = ENTITY.register("bow_head_guitar_fish", () -> EntityType.Builder.of(ModFishEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("bow_head_guitar_fish"));
     public static RegistryObject<EntityType<MantaRayEntity>> MANTA_RAY = ENTITY.register("manta_ray", () -> EntityType.Builder.of(MantaRayEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("manta_ray"));
 
+    public static List<ResourceLocation> smallFish = new ArrayList<>();
+
     static {
+        List<RegistryObject<? extends EntityType<? extends LivingEntity>>> fishObj = Arrays.asList(BOW_HEAD_GUITAR_FISH, FLORIDA_HOG_FISH);
+        fishObj.forEach((obj) -> smallFish.add(obj.getId()));
+
         for (String rl : bats){
             ENTITY.register(rl, () -> EntityType.Builder.of(ModdedBatEntity::new, MobCategory.CREATURE).sized(EntityType.BAT.getWidth(), EntityType.BAT.getHeight()).build(rl));
         }

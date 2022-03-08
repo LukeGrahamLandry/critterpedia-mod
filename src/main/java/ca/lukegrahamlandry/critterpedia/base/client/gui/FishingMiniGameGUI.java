@@ -97,6 +97,7 @@ public class FishingMiniGameGUI extends Screen {
 
     @Override
     public void render(PoseStack matrix, int p_96563_, int p_96564_, float p_96565_) {
+        this.renderBackground(matrix);
         super.render(matrix, p_96563_, p_96564_, p_96565_);
 
         int progressBarX = 150;
@@ -150,7 +151,6 @@ public class FishingMiniGameGUI extends Screen {
     static final ItemStack fishStack = new ItemStack(Items.COD);
     @Override
     public void renderBackground(PoseStack stack) {
-        this.renderBackground(stack);
         super.renderBackground(stack);
 
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
