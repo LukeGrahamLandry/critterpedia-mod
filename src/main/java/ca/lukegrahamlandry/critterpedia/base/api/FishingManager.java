@@ -1,5 +1,6 @@
 package ca.lukegrahamlandry.critterpedia.base.api;
 
+import ca.lukegrahamlandry.critterpedia.ModMain;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.gson.*;
@@ -55,7 +56,13 @@ public class FishingManager extends SimpleJsonResourceReloadListener {
                     option.triggeredCritter = name;
                 }
 
-                ResourceLocation item = rl(data.get("item"));
+                ResourceLocation item;
+                if (data.has("item")){
+                    item = rl(data.get("item"));
+                } else {
+                    item = new ResourceLocation(name.getNamespace(), "live_" + name.getPath());
+                }
+
                 if (ForgeRegistries.ITEMS.containsKey(item)){
                     option.fishItem = item;
                 } else {
@@ -64,12 +71,7 @@ public class FishingManager extends SimpleJsonResourceReloadListener {
                 }
 
                 if (data.has("rarity")){
-                    if (rarities.containsKey(rl(data.get("rarity")))){
-                        option.rarity = rl(data.get("rarity"));
-                    } else {
-                        LOGGER.error("skipping fishing option {}, undefined rarity {}", name, rl(data.get("rarity")));
-                        continue;
-                    }
+                    option.rarity = c_rl(data.get("rarity"));
                 } else {
                     LOGGER.error("skipping fishing option {}, no rarity", name);
                     continue;
@@ -97,6 +99,14 @@ public class FishingManager extends SimpleJsonResourceReloadListener {
 
     private ResourceLocation rl(JsonElement obj){
         return new ResourceLocation(obj.getAsString());
+    }
+
+    private ResourceLocation c_rl(JsonElement obj){
+        if (obj.getAsString().contains(":")){
+            return new ResourceLocation(obj.getAsString());
+        } else {
+            return new ResourceLocation(ModMain.MOD_ID, obj.getAsString());
+        }
     }
 
     // todo: consider biome, etc which will require manually looping through all options to generate the list for that circumstance

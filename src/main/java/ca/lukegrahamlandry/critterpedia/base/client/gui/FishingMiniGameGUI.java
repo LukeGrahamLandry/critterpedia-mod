@@ -28,9 +28,6 @@ public class FishingMiniGameGUI extends Screen {
     private static final ResourceLocation PROGRESS_BAR_TEXTURE = new ResourceLocation("textures/gui/bars.png");
     private static final ResourceLocation FISH_BAR = new ResourceLocation("textures/gui/bars.png");
 
-
-    static final float BAR_GRAVITY = 0.01F;
-
     FishingRarity rarity;
     float barPosition = 0.5F; // 0-1
     float barVelocity = 0;
@@ -39,12 +36,9 @@ public class FishingMiniGameGUI extends Screen {
     float fishPosition = 0.45F; // 0-1
     float fishTargetPos = fishPosition;
 
-    public FishingMiniGameGUI(ResourceLocation rarity) {
+    public FishingMiniGameGUI(FishingRarity rarity) {
         super(new TextComponent("Fishing"));
-        this.rarity = FishingManager.rarities.get(rarity);
-        this.rarity.barSize = 0.30F;
-        this.rarity.fishSpeed = 0.01F;
-        System.out.println(this.rarity.barSize);
+        this.rarity = rarity;
     }
 
     @Override
@@ -57,9 +51,7 @@ public class FishingMiniGameGUI extends Screen {
     @Override
     public void tick() {
         super.tick();
-
-
-
+        
         float direction = this.fishTargetPos - this.fishPosition;
         if (Math.abs(direction) > 0.05){
             this.fishPosition += Math.signum(direction) * this.rarity.fishSpeed;
@@ -71,13 +63,13 @@ public class FishingMiniGameGUI extends Screen {
 
         boolean between = (this.fishPosition > this.barPosition) && (this.fishPosition < (this.barPosition + rarity.barSize));
         if (between){
-            this.completion += 0.02F;
+            this.completion += this.rarity.progressGainRate;
         } else {
-            this.completion -= 0.01F;
+            this.completion -= this.rarity.progressLossRate;
         }
 
         this.barPosition += this.barVelocity;
-        this.barVelocity = (float) Math.max(this.barVelocity - BAR_GRAVITY, -0.1);
+        this.barVelocity = (float) Math.max(this.barVelocity - rarity.barGravity, -0.1);
         if (barPosition > 1) {
             barPosition = 1;
             this.barVelocity = Math.min(0, this.barVelocity);
@@ -164,7 +156,7 @@ public class FishingMiniGameGUI extends Screen {
     @Override
     public boolean keyPressed(int key, int p_96553_, int p_96554_) {
         if (key == GLFW.GLFW_KEY_SPACE){
-            barVelocity += 0.05F;
+            barVelocity += this.rarity.barForce;
         }
         return super.keyPressed(key, p_96553_, p_96554_);
     }

@@ -27,7 +27,6 @@ public class ModMain {
     }
 
     private void registerPlugins(final FMLCommonSetupEvent event) {
-        FishingRarity.createDefaults();
         Critters.register(new VanillaCritterPlugin());
     }
 }
