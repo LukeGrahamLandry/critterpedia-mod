@@ -1,44 +1,30 @@
 package ca.lukegrahamlandry.critterpedia.base.api;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
 import com.google.gson.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
-import net.minecraft.util.GsonHelper;
 import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraft.util.random.WeightedEntry;
 import net.minecraft.util.random.WeightedRandomList;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
-public class FishingManager extends SimpleJsonResourceReloadListener {
+public class FishingOptionLoader extends SimpleJsonResourceReloadListener {
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
     private static final Logger LOGGER = LogManager.getLogger();
 
-    // todo: these should be not static and gotten from level.getServer().getServerResources() somehow
-    public static Map<ResourceLocation, FishingOption> options = new HashMap<>();
-    public static Map<ResourceLocation, WeightedRandomList<FishingOption>>  wightedOptionsByRod = new HashMap<>();
+    public Map<ResourceLocation, FishingOption> options = new HashMap<>();
+    public Map<ResourceLocation, WeightedRandomList<FishingOption>>  wightedOptionsByRod = new HashMap<>();
 
-    public static Map<ResourceLocation, FishingRarity> rarities = new HashMap<>();
-
-    public FishingManager() {
+    public FishingOptionLoader() {
         super(GSON, "fishing");
     }
 
-    // todo: clearing every apply seems like a bad idea cause it might run another time for each data pack
-    // so instead the WeightedRandomList should be another map so it just overwrites when it loads another
-
     protected void apply(Map<ResourceLocation, JsonElement> p_44037_, ResourceManager p_44038_, ProfilerFiller p_44039_) {
-        options.clear();
-        wightedOptionsByRod.clear();
         Map<ResourceLocation, List<FishingOption>> optionsByRod = new HashMap<>();
 
         for (Map.Entry<ResourceLocation, JsonElement> entry : p_44037_.entrySet()) {
@@ -107,12 +93,5 @@ public class FishingManager extends SimpleJsonResourceReloadListener {
         } else {
             return new ResourceLocation(ModMain.MOD_ID, obj.getAsString());
         }
-    }
-
-    // todo: consider biome, etc which will require manually looping through all options to generate the list for that circumstance
-    static Random rand = new Random();
-    public static FishingOption getFish(ResourceLocation rod){
-        Optional<FishingOption> result = wightedOptionsByRod.get(rod).getRandom(rand);
-        return result.orElse(null);
     }
 }

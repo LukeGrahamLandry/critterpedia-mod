@@ -1,12 +1,14 @@
 package ca.lukegrahamlandry.critterpedia.base.network;
 
-import ca.lukegrahamlandry.critterpedia.base.api.FishingManager;
+import ca.lukegrahamlandry.critterpedia.base.api.FishingOptionLoader;
 import ca.lukegrahamlandry.critterpedia.base.api.FishingRarity;
 import ca.lukegrahamlandry.critterpedia.base.client.gui.FishingMiniGameGUI;
+import ca.lukegrahamlandry.critterpedia.base.event.FishingDataManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.network.NetworkEvent;
@@ -15,11 +17,8 @@ import java.util.function.Supplier;
 
 public class StartFishingMiniGamePacket {
     String fishRarityJsonData;
-    public StartFishingMiniGamePacket(ResourceLocation fishRarityId) { // server only
-        if (!FishingManager.rarities.containsKey(fishRarityId)){
-            System.out.println("invalid rarity " + fishRarityId);
-        }
-        this.fishRarityJsonData = FishingManager.rarities.get(fishRarityId).toJson();
+    public StartFishingMiniGamePacket(FishingRarity rarity) { // server only
+        this.fishRarityJsonData = rarity.toJson();
     }
 
     public StartFishingMiniGamePacket(String fishRarity) {

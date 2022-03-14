@@ -1,7 +1,6 @@
 package ca.lukegrahamlandry.critterpedia.base.client.gui;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
-import ca.lukegrahamlandry.critterpedia.base.api.FishingManager;
 import ca.lukegrahamlandry.critterpedia.base.api.FishingRarity;
 import ca.lukegrahamlandry.critterpedia.base.network.EndFishingMiniGamePacket;
 import ca.lukegrahamlandry.critterpedia.base.network.NetworkInit;

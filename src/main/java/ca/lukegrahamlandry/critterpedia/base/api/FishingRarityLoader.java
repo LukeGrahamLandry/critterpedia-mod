@@ -5,8 +5,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraft.util.random.WeightedRandomList;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +13,8 @@ import java.util.*;
 public class FishingRarityLoader extends SimpleJsonResourceReloadListener {
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
     private static final Logger LOGGER = LogManager.getLogger();
+
+    public Map<ResourceLocation, FishingRarity> rarities = new HashMap<>();
 
     public FishingRarityLoader() {
         super(GSON, "fishingrarity");
@@ -28,7 +28,7 @@ public class FishingRarityLoader extends SimpleJsonResourceReloadListener {
 
             try {
                 JsonObject data = entry.getValue().getAsJsonObject();
-                FishingManager.rarities.put(name, new FishingRarity(data));
+                rarities.put(name, new FishingRarity(data));
                 count++;
 
             } catch (IllegalArgumentException | JsonParseException error) {
