@@ -30,10 +30,10 @@ public class ClientSetup {
         }
 
         EntityRenderers.register(EntityInit.FLY.get(), FlyGeoRender::new);
-        EntityRenderers.register(EntityInit.MANTA_RAY.get(), MantaRayGeoRender::new);
+        EntityRenderers.register(EntityInit.MANTA_RAY.get(), (ctx) -> new GenericGeoRender<>(ctx, "manta_ray"));
+        EntityRenderers.register(EntityInit.SALT_WATER_CROCODILE.get(), (ctx) -> new GenericGeoRender<>(ctx, "saltwatercroc"));
         EntityRenderers.register(EntityInit.BOW_HEAD_GUITAR_FISH.get(), BowheadGuitarFishRender::new);
         EntityRenderers.register(EntityInit.FLORIDA_HOG_FISH.get(), FloridaHogFishRender::new);
-
 
         // the string renders wrong
         EntityRenderers.register(EntityInit.BOBBER.get(), FishingHookRenderer::new);

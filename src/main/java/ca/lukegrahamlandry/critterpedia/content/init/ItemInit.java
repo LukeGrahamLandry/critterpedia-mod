@@ -3,6 +3,7 @@ package ca.lukegrahamlandry.critterpedia.content.init;
 import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.item.LiveFishItem;
 import ca.lukegrahamlandry.critterpedia.content.item.ModFishingRod;
+import ca.lukegrahamlandry.critterpedia.content.item.ModMobBucketItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -34,10 +35,10 @@ public class ItemInit {
 
     static {
         Supplier<Fluid> WATER = () -> Fluids.WATER;
+        Supplier<? extends SoundEvent> bucketSound = () -> SoundEvents.BUCKET_FILL_FISH;
         for (ResourceLocation fish : EntityInit.smallFish){
             Supplier<? extends EntityType<?>> entitySupplier = () -> ForgeRegistries.ENTITIES.getValue(fish);
-            Supplier<? extends SoundEvent> sound = () -> SoundEvents.BUCKET_FILL_FISH;
-            smallFishBuckets.put(fish, ITEM.register(fish.getPath() + "_bucket", () -> new MobBucketItem(entitySupplier, WATER, sound, new Item.Properties().stacksTo(0).tab(ModCreativeTab.fish))));
+            smallFishBuckets.put(fish, ITEM.register(fish.getPath() + "_bucket", () -> new ModMobBucketItem(entitySupplier, WATER, bucketSound, new Item.Properties().stacksTo(1).tab(ModCreativeTab.fish))));
 
             makeFish(fish);
         }

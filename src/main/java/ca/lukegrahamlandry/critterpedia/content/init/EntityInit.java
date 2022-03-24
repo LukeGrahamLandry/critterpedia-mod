@@ -12,7 +12,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class EntityInit {
@@ -26,6 +25,7 @@ public class EntityInit {
     public static RegistryObject<EntityType<ModFishEntity>> FLORIDA_HOG_FISH = ENTITY.register("florida_hog_fish", () -> EntityType.Builder.of(ModFishEntity::new, MobCategory.CREATURE).sized(0.9F, 0.9F).build("florida_hog_fish"));
     public static RegistryObject<EntityType<ModFishEntity>> BOW_HEAD_GUITAR_FISH = ENTITY.register("bow_head_guitar_fish", () -> EntityType.Builder.of(ModFishEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("bow_head_guitar_fish"));
     public static RegistryObject<EntityType<MantaRayEntity>> MANTA_RAY = ENTITY.register("manta_ray", () -> EntityType.Builder.of(MantaRayEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("manta_ray"));
+    public static RegistryObject<EntityType<CrocodileEntity>> SALT_WATER_CROCODILE = ENTITY.register("salt_water_crocodile", () -> EntityType.Builder.of(CrocodileEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("salt_water_crocodile"));
 
     public static List<ResourceLocation> smallFish = new ArrayList<>();
 
