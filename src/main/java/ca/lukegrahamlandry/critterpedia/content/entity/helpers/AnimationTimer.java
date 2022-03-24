@@ -36,10 +36,10 @@ public class AnimationTimer<E extends LivingEntity & IAnimatable> {
         if (!entity.level.isClientSide()){
             int tick = entity.getEntityData().get(this.currentTick);
             if (tick > 0){
+                System.out.println(tick);
                 int actionTick = this.lengthTicks - tick;
                 if (actions.containsKey(actionTick)) actions.get(actionTick).accept(entity);
                 entity.getEntityData().set(this.currentTick, tick - 1);
-                System.out.println(tick);
             }
         }
     }
@@ -58,7 +58,7 @@ public class AnimationTimer<E extends LivingEntity & IAnimatable> {
 
     public boolean checkAnimation(E entity, AnimationEvent<E> event){
         if (this.isPlaying(entity)){
-            event.getController().setAnimation(new AnimationBuilder().addAnimation(this.name, false));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation(this.name, true));
             return true;
         }
         return false;

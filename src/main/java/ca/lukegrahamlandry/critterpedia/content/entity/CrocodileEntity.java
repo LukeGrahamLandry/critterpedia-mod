@@ -36,7 +36,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CrocodileEntity extends Animal implements IAnimatable {
-    static AnimationTimer<CrocodileEntity> attackTimer = new AnimationTimer<>(CrocodileEntity.class, "animation.saltwatercroc.bite", 2);
+    static AnimationTimer<CrocodileEntity> attackTimer = new AnimationTimer<>(CrocodileEntity.class, "animation.saltwatercroc.bite", 20);
     static List<LoopAnimationHandler<CrocodileEntity>> movementAnimations = Arrays.asList(
             new LoopAnimationHandler<>(CrocodileEntity.class, "animation.saltwatercroc.swim", (croc) -> croc.isInWater() && croc.navigation.isInProgress()),
         new LoopAnimationHandler<>(CrocodileEntity.class, "animation.saltwatercroc.float", (croc) -> croc.isInWater() && !croc.navigation.isInProgress()),
@@ -45,7 +45,7 @@ public class CrocodileEntity extends Animal implements IAnimatable {
     );
 
     static {
-        attackTimer.setAction(1, (croc -> {
+        attackTimer.setAction(15, (croc -> {
             if (croc.hasTarget()){
                 croc.doHurtTarget(croc.getTarget());
             }
@@ -142,8 +142,8 @@ public class CrocodileEntity extends Animal implements IAnimatable {
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, "attack", 0, this::attackAnimationPredicate));
-        data.addAnimationController(new AnimationController(this, "move", 0, this::moveAnimationPredicate));
+       data.addAnimationController(new AnimationController(this, "move", 0, this::moveAnimationPredicate));
+       data.addAnimationController(new AnimationController(this, "attack", 0, this::attackAnimationPredicate));
     }
 
     private AnimationFactory factory = new AnimationFactory(this);
