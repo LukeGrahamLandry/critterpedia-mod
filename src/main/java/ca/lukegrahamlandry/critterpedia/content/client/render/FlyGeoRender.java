@@ -1,6 +1,6 @@
 package ca.lukegrahamlandry.critterpedia.content.client.render;
 
-import ca.lukegrahamlandry.critterpedia.content.client.models.FlyGeoModel;
+import ca.lukegrahamlandry.critterpedia.content.client.geo.FlyGeoModel;
 import ca.lukegrahamlandry.critterpedia.content.entity.FlyEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

@@ -1,4 +1,4 @@
-package ca.lukegrahamlandry.critterpedia.content.client.models;
+package ca.lukegrahamlandry.critterpedia.content.client.geo;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.entity.FlyEntity;

@@ -4,6 +4,3 @@
 - commissioned by Keaka
 
 A minecraft mod that makes collecting animals more rewarding.
-
-
-todo: in game help menu for fishing 

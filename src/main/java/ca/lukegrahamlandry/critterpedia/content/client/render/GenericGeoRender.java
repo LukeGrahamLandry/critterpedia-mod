@@ -1,6 +1,6 @@
 package ca.lukegrahamlandry.critterpedia.content.client.render;
 
-import ca.lukegrahamlandry.critterpedia.content.client.models.GenericGeoModel;
+import ca.lukegrahamlandry.critterpedia.content.client.geo.GenericGeoModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;

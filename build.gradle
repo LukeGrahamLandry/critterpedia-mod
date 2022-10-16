@@ -18,7 +18,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '0.01'
+version = '1.0.22'
 group = 'ca.lukegrahamlandry.critterpedia' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'critterpedia'
 
