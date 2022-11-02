@@ -1,0 +1,10 @@
+{
+  "weight": 10,
+  "barSize": 0.3,
+  "fishSpeed": 0.01,
+  "fishMoveChance": 0.02,
+  "barGravity": 0.01,
+  "progressGainRate": 0.02,
+  "progressLossRate": 0.01,
+  "barForce": 0.05
+}
