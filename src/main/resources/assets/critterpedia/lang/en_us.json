@@ -1,4 +1,21 @@
 {
   "key.open_critters": "Open Critterpedia",
-  "key.categories.critterpedia": "Critterpedia"
+  "key.categories.critterpedia": "Critterpedia",
+  "entity.critterpedia.fly": "Fly",
+"entity.critterpedia.manowar": "Man of war",
+  "entity.critterpedia.florida_hog_fish:": "Florida hogfish",
+  "entity.critterpedia.bow_head_guitar_fish": "Bowhead guitarfish",
+  "entity.critterpedia.manta_ray": "Manta ray",
+  "entity.critterpedia.hammerhead_bat": "Hammerhead bat",
+  "item.critterpedia.large_fishing_rod": "Large Fishing Rod",
+  "item.critterpedia.small_fishing_rod": "Small Fishing Rod",
+  "item.critterpedia.raw_florida_hog_fish": "Florida hogfish",
+  "item.critterpedia.live_florida_hog_fish": "Florida hogfish",
+  "item.critterpedia.cooked_florida_hog_fish": "Cooked Florida hogfish",
+  "item.critterpedia.florida_hog_fish_bucket": "Bucket of Florida hogfish",
+  "item.critterpedia.live_bow_head_guitar_fish": "Bowhead guitarfish",
+  "item.critterpedia.raw_bow_head_guitar_fish": "Bowhead guitarfish",
+  "item.critterpedia.cooked_bow_head_guitar_fish": "Cooked Bowhead guitarfish",
+  "item.critterpedia.bow_head_guitar_fish_bucket": "Bucket of Bowhead guitarfish",
+  "entity.critterpedia.salt_water_crocodile": "Salt water crocodile"
 }

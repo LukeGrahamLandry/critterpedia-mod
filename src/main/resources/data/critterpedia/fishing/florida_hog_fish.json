@@ -1,6 +1,6 @@
 {
   "rod": ["critterpedia:small_rod"],
-  "item": "minecraft:apple",
+  "item": "critterpedia:live_florida_hog_fish",
   "critter": "critterpedia:florida_hog_fish",
-  "rarity": "uncommon"
+  "rarity": "common"
 }

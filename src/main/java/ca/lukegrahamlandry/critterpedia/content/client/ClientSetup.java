@@ -19,6 +19,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = ModMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -33,6 +34,7 @@ public class ClientSetup {
         EntityRenderers.register(EntityInit.MANTA_RAY.get(), (ctx) -> new GenericGeoRender<>(ctx, "manta_ray"));
         EntityRenderers.register(EntityInit.SALT_WATER_CROCODILE.get(), (ctx) -> new GenericGeoRender<>(ctx, "saltwatercroc"));
         EntityRenderers.register(EntityInit.BOW_HEAD_GUITAR_FISH.get(), BowheadGuitarFishRender::new);
+        EntityRenderers.register(EntityInit.MAN_O_WAR.get(),(ctx -> new GenericGeoRender<>(ctx,"manowar")));
         EntityRenderers.register(EntityInit.FLORIDA_HOG_FISH.get(), FloridaHogFishRender::new);
 
         // the string renders wrong
@@ -40,7 +42,7 @@ public class ClientSetup {
     }
 
     public static void byRL(String registryName, EntityRendererProvider renderer){
-        EntityRenderers.register(ForgeRegistries.ENTITIES.getValue(new ResourceLocation(ModMain.MOD_ID, registryName)), renderer);
+        EntityRenderers.register(Objects.requireNonNull(ForgeRegistries.ENTITIES.getValue(new ResourceLocation(ModMain.MOD_ID, registryName))), renderer);
     }
 
     @SubscribeEvent

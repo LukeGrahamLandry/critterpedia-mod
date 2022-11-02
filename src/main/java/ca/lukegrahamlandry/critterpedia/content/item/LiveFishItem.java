@@ -26,7 +26,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class LiveFishItem extends Item {
     ResourceLocation entityTypeId;
-    public LiveFishItem(ResourceLocation entityTypeId, Properties p_41383_) {
+    public LiveFishItem(Properties p_41383_) {
         super(p_41383_);
         this.entityTypeId = entityTypeId;
     }

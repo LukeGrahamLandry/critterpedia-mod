@@ -6,6 +6,7 @@ import ca.lukegrahamlandry.critterpedia.base.network.NetworkInit;
 import ca.lukegrahamlandry.critterpedia.content.VanillaCritterPlugin;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
 import ca.lukegrahamlandry.critterpedia.content.init.ItemInit;
+import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -24,6 +25,7 @@ public class ModMain {
         modEventBus.addListener(this::registerPlugins);
         EntityInit.ENTITY.register(modEventBus);
         ItemInit.ITEM.register(modEventBus);
+
     }
 
     private void registerPlugins(final FMLCommonSetupEvent event) {

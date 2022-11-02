@@ -23,6 +23,7 @@ public class ModFishingRod extends Item implements Vanishable {
         this.rodType = rodType;
     }
 
+
     public InteractionResultHolder<ItemStack> use(Level p_41290_, Player p_41291_, InteractionHand p_41292_) {
         ItemStack itemstack = p_41291_.getItemInHand(p_41292_);
         if (p_41291_.fishing instanceof TriggerGuiFishingHook) {
