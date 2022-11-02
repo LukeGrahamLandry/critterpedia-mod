@@ -54,6 +54,6 @@ public class ItemInit {
     private static void makeFish(ResourceLocation fish){
         rawFish.put(fish, ITEM.register("raw_" + fish.getPath(), () -> new Item(new Item.Properties().tab(ModCreativeTab.fish))));
         cookedFish.put(fish, ITEM.register("cooked_" + fish.getPath(), () -> new Item(new Item.Properties().tab(ModCreativeTab.fish))));
-        liveFish.put(fish, ITEM.register("live_" + fish.getPath(), () -> new LiveFishItem(new Item.Properties().durability(20*20))));
+        liveFish.put(fish, ITEM.register("live_" + fish.getPath(), () -> new LiveFishItem(fish, new Item.Properties().durability(20*20))));
     }
 }
