@@ -21,6 +21,7 @@ import net.minecraft.world.level.Level;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
@@ -36,19 +37,8 @@ public class PsychedelicjellyEntity extends AbstractFish implements IAnimatable 
 
     private AnimationFactory factory = new AnimationFactory(this);
 
-    @Override
-    public void registerControllers(AnimationData data) {
 
-    }
 
-    private float tx;
-    private float ty;
-    private float tz;
-
-    protected void registerGoals() {
-        this.goalSelector.addGoal(0, new PsychedelicjellyEntity.SquidRandomMovementGoal(this));
-        this.goalSelector.addGoal(1, new PsychedelicjellyEntity.SquidFleeGoal());
-    }
 
     @Override
     public AnimationFactory getFactory() {
@@ -56,8 +46,10 @@ public class PsychedelicjellyEntity extends AbstractFish implements IAnimatable 
     }
 
 
+
+
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (this.isUnderWater()) {
+        if (this.isUnderWater()){
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.PsychedelicJelly.swim", true));
         } else {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.PsychedelicJelly.idle", true));
@@ -65,6 +57,12 @@ public class PsychedelicjellyEntity extends AbstractFish implements IAnimatable 
 
         return PlayState.CONTINUE;
     }
+
+    @Override
+    public void registerControllers(AnimationData data) {
+        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+    }
+
 
 
     //note: I just wanna do this math. 5.0D = 2.5 hearts, sounds good
@@ -105,54 +103,4 @@ public class PsychedelicjellyEntity extends AbstractFish implements IAnimatable 
         }
     }
 
-    class SquidRandomMovementGoal extends Goal {
-        private final PsychedelicjellyEntity squid;
-
-        public SquidRandomMovementGoal(PsychedelicjellyEntity p_30004_) {
-            this.squid = p_30004_;
-        }
-
-
-        public boolean canUse() {
-            return true;
-        }
-
-
-
-        public void tick() {
-            int i = this.squid.getNoActionTime();
-            if (i > 100) {
-                this.squid.setMovementVector(0.0F, 0.0F, 0.0F);
-            } else if (this.squid.getRandom().nextInt(reducedTickDelay(50)) == 0 || !this.squid.isInWaterOrBubble() || !this.squid.hasMovementVector()) {
-                float f = this.squid.getRandom().nextFloat() * ((float) Math.PI * 2F);
-                float f1 = Mth.cos(f) * 0.2F;
-                float f2 = -0.1F + this.squid.getRandom().nextFloat() * 0.2F;
-                float f3 = Mth.sin(f) * 0.2F;
-                this.squid.setMovementVector(f1, f2, f3);
-            }
-
-        }
-    }
-    public void setMovementVector(float pRandomMotionVecX, float pRandomMotionVecY, float pRandomMotionVecZ) {
-        this.tx = pRandomMotionVecX;
-        this.ty = pRandomMotionVecY;
-        this.tz = pRandomMotionVecZ;
-    }
-    public boolean hasMovementVector() {
-        return this.tx != 0.0F || this.ty != 0.0F || this.tz != 0.0F;
-    }
-
-    class SquidFleeGoal extends Goal {
-        private static final float SQUID_FLEE_SPEED = 3.0F;
-        private static final float SQUID_FLEE_MIN_DISTANCE = 5.0F;
-        private static final float SQUID_FLEE_MAX_DISTANCE = 10.0F;
-        private int fleeTicks;
-
-        @Override
-        public boolean canUse() {
-            return false;
-        }
-    }
-
 }
-

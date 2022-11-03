@@ -8,7 +8,7 @@ public class MegaBatEntity extends Bat {
     public MegaBatEntity(EntityType<? extends MegaBatEntity> p_27412_, Level p_27413_) {
         super(p_27412_, p_27413_);
     }
-
+  //add in the swoop down cool down near water and cool down while hanging
     @Override
     public void tick() {
         super.tick();

@@ -18,6 +18,7 @@ import net.minecraft.world.level.Level;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
@@ -33,10 +34,7 @@ public class UpsidedownjellyEntity extends AbstractFish implements IAnimatable {
 
     private AnimationFactory factory = new AnimationFactory(this);
 
-    @Override
-    public void registerControllers(AnimationData data) {
 
-    }
 
     @Override
     public AnimationFactory getFactory() {
@@ -51,6 +49,11 @@ public class UpsidedownjellyEntity extends AbstractFish implements IAnimatable {
         }
 
         return PlayState.CONTINUE;
+    }
+
+    @Override
+    public void registerControllers(AnimationData data) {
+        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
     }
 
 
