@@ -1,7 +1,7 @@
 package ca.lukegrahamlandry.critterpedia.content.client.models;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
-import ca.lukegrahamlandry.critterpedia.content.entity.ModdedBatEntity;
+import ca.lukegrahamlandry.critterpedia.content.entity.MegaBatEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -15,7 +15,7 @@ import net.minecraft.util.Mth;
 
 import java.util.function.Supplier;
 
-public class ModdedBatModel extends EntityModel<ModdedBatEntity> {
+public class ModdedBatModel extends EntityModel<MegaBatEntity> {
     protected ModelPart root;
     private ModelPart Body;
     private ModelPart LeftWing;
@@ -61,7 +61,7 @@ public class ModdedBatModel extends EntityModel<ModdedBatEntity> {
     }
 
     @Override
-    public void setupAnim(ModdedBatEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(MegaBatEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         float f = ageInTicks;
         float f1 = 0.3F;
 

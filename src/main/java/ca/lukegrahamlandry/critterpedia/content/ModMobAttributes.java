@@ -3,7 +3,8 @@ package ca.lukegrahamlandry.critterpedia.content;
 import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.entity.CrocodileEntity;
 import ca.lukegrahamlandry.critterpedia.content.entity.FlyEntity;
-import ca.lukegrahamlandry.critterpedia.content.entity.ManowarEntity;
+import ca.lukegrahamlandry.critterpedia.content.entity.PsychedelicjellyEntity;
+import ca.lukegrahamlandry.critterpedia.content.entity.UpsidedownjellyEntity;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -19,15 +20,20 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModMobAttributes {
     @SubscribeEvent
     public static void register(EntityAttributeCreationEvent event){
-        for (String rl : EntityInit.bats){
+        for (String rl : EntityInit.microbats){
             event.put((EntityType<? extends LivingEntity>) ForgeRegistries.ENTITIES.getValue(new ResourceLocation(ModMain.MOD_ID, rl)), Bat.createAttributes().build());
+        }
+        for (String rl1 : EntityInit.megabats){
+            event.put((EntityType<? extends LivingEntity>) ForgeRegistries.ENTITIES.getValue(new ResourceLocation(ModMain.MOD_ID, rl1)), Bat.createAttributes().build());
         }
 
         event.put(EntityInit.FLY.get(), FlyEntity.createAttributes().build());
-event.put(EntityInit.MAN_O_WAR.get(), ManowarEntity.createAttributes().build());
+event.put(EntityInit.MAN_O_WAR.get(), UpsidedownjellyEntity.createAttributes().build());
         event.put(EntityInit.FLORIDA_HOG_FISH.get(), AbstractFish.createAttributes().build());
         event.put(EntityInit.BOW_HEAD_GUITAR_FISH.get(), AbstractFish.createAttributes().build());
         event.put(EntityInit.MANTA_RAY.get(), AbstractFish.createAttributes().build());
         event.put(EntityInit.SALT_WATER_CROCODILE.get(), CrocodileEntity.createAttributes().build());
+        event.put(EntityInit.PSYCHEDELIC_JELLY.get(), PsychedelicjellyEntity.createAttributes().build());
+        event.put(EntityInit.UPSIDE_DOWN_JELLY.get(), UpsidedownjellyEntity.createAttributes().build());
     }
 }

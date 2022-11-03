@@ -4,8 +4,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.level.Level;
 
-public class ModdedBatEntity extends Bat {
-    public ModdedBatEntity(EntityType<? extends MegaBatEntity> p_27412_, Level p_27413_) {
+public class MegaBatEntity extends Bat {
+    public MegaBatEntity(EntityType<? extends MegaBatEntity> p_27412_, Level p_27413_) {
         super(p_27412_, p_27413_);
     }
 

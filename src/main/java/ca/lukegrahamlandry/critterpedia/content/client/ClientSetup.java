@@ -26,9 +26,13 @@ import java.util.function.Supplier;
 public class ClientSetup {
     @SubscribeEvent
     public static void doSetup(FMLClientSetupEvent event) {
-        for (String rl : EntityInit.bats){
+        for (String rl : EntityInit.microbats){
             byRL(rl, (ctx) -> new ModdedBatRender(ctx, (ctxx) -> new ModdedBatModel(ctxx, rl)));
+            for (String rl1 :EntityInit.megabats){
+                byRL(rl1, (ctx) -> new ModdedBatRender(ctx,(ctxx) -> new ModdedBatModel(ctxx, rl1)));
+            }
         }
+
 
         EntityRenderers.register(EntityInit.FLY.get(), FlyGeoRender::new);
         EntityRenderers.register(EntityInit.MANTA_RAY.get(), (ctx) -> new GenericGeoRender<>(ctx, "manta_ray"));
@@ -36,7 +40,8 @@ public class ClientSetup {
         EntityRenderers.register(EntityInit.BOW_HEAD_GUITAR_FISH.get(), BowheadGuitarFishRender::new);
         EntityRenderers.register(EntityInit.MAN_O_WAR.get(),(ctx -> new GenericGeoRender<>(ctx,"manowar")));
         EntityRenderers.register(EntityInit.FLORIDA_HOG_FISH.get(), FloridaHogFishRender::new);
-
+EntityRenderers.register(EntityInit.PSYCHEDELIC_JELLY.get(), (ctx) -> new GenericGeoRender<> (ctx, "psychedelicjelly"));
+        EntityRenderers.register(EntityInit.UPSIDE_DOWN_JELLY.get(), (ctx) -> new GenericGeoRender<> (ctx, "upsidedownjelly"));
         // the string renders wrong
         EntityRenderers.register(EntityInit.BOBBER.get(), FishingHookRenderer::new);
     }
@@ -47,8 +52,11 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void layers(EntityRenderersEvent.RegisterLayerDefinitions event){
-        for (String rl : EntityInit.bats){
+        for (String rl : EntityInit.microbats){
             makeLayer(event, rl, ModdedBatModel.getModelFor(rl));
+        }
+        for (String rl1 : EntityInit.megabats){
+            makeLayer(event, rl1, ModdedBatModel.getModelFor(rl1));
         }
         event.registerLayerDefinition(FloridaHogFishModel.LAYER_LOCATION, FloridaHogFishModel::createBodyLayer);
         event.registerLayerDefinition(BowheadGuitarFishModel.LAYER_LOCATION, BowheadGuitarFishModel::createBodyLayer);

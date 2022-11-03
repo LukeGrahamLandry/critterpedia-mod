@@ -1,0 +1,77 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.UpsidedownJelly",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "Bell",
+					"parent": "root",
+					"pivot": [0, 2, 0],
+					"cubes": [
+						{"origin": [-3.5, 0, -3.5], "size": [7, 2, 7], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "InnerTentacle",
+					"parent": "Bell",
+					"pivot": [0, 2, 0],
+					"cubes": [
+						{"origin": [-1.6, 2, -1.5], "size": [3, 7, 3], "uv": [0, 9]}
+					]
+				},
+				{
+					"name": "InnerBody",
+					"parent": "Bell",
+					"pivot": [0, 4, 0],
+					"cubes": [
+						{"origin": [-3.5, 3, -3.5], "size": [7, 1, 7], "uv": [0, 24]}
+					]
+				},
+				{
+					"name": "TentacleBack",
+					"parent": "InnerBody",
+					"pivot": [0, 4, 2.5],
+					"cubes": [
+						{"origin": [-3.5, 4, 2.5], "size": [7, 4, 0], "uv": [23, 1]}
+					]
+				},
+				{
+					"name": "TentacleFront",
+					"parent": "InnerBody",
+					"pivot": [0, 4, -2.5],
+					"cubes": [
+						{"origin": [-3.5, 4, -2.5], "size": [7, 4, 0], "uv": [23, 1]}
+					]
+				},
+				{
+					"name": "TentacleLeft",
+					"parent": "InnerBody",
+					"pivot": [-2.5, 4, 0],
+					"cubes": [
+						{"origin": [-2.5, 4, -3.5], "size": [0, 4, 7], "uv": [23, -6]}
+					]
+				},
+				{
+					"name": "TentacleRight",
+					"parent": "InnerBody",
+					"pivot": [2.5, 4, 0],
+					"cubes": [
+						{"origin": [2.6, 4, -3.5], "size": [0, 4, 7], "uv": [23, -6]}
+					]
+				}
+			]
+		}
+	]
+}
