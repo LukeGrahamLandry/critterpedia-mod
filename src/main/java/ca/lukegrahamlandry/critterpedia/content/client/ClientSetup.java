@@ -42,6 +42,8 @@ public class ClientSetup {
         EntityRenderers.register(EntityInit.FLORIDA_HOG_FISH.get(), FloridaHogFishRender::new);
 EntityRenderers.register(EntityInit.PSYCHEDELIC_JELLY.get(), (ctx) -> new GenericGeoRender<> (ctx, "psychedelicjelly"));
         EntityRenderers.register(EntityInit.UPSIDE_DOWN_JELLY.get(), (ctx) -> new GenericGeoRender<> (ctx, "upsidedownjelly"));
+        EntityRenderers.register(EntityInit.COMMON_SNAPPER.get(), (ctx) -> new GenericGeoRender<>(ctx, "commonsnappingturtle"));
+
         // the string renders wrong
         EntityRenderers.register(EntityInit.BOBBER.get(), FishingHookRenderer::new);
     }

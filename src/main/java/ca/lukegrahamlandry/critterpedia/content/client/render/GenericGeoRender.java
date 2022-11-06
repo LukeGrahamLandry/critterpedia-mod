@@ -22,4 +22,6 @@ public class GenericGeoRender<E extends LivingEntity & IAnimatable> extends GeoE
     public RenderType getRenderType(E animatable, float partialTicks, PoseStack stack, @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
         return RenderType.entityTranslucent(textureLocation);
     }
+
+
 }

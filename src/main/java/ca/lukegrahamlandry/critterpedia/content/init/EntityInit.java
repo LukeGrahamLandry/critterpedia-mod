@@ -27,6 +27,7 @@ public class EntityInit {
     public static RegistryObject<EntityType<ModFishEntity>> BOW_HEAD_GUITAR_FISH = ENTITY.register("bow_head_guitar_fish", () -> EntityType.Builder.of(ModFishEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("bow_head_guitar_fish"));
     public static RegistryObject<EntityType<MantaRayEntity>> MANTA_RAY = ENTITY.register("manta_ray", () -> EntityType.Builder.of(MantaRayEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("manta_ray"));
     public static RegistryObject<EntityType<CrocodileEntity>> SALT_WATER_CROCODILE = ENTITY.register("salt_water_crocodile", () -> EntityType.Builder.of(CrocodileEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("salt_water_crocodile"));
+    public static RegistryObject<EntityType<CommonSnappingTurtleEntity>> COMMON_SNAPPER = ENTITY.register("common_snapping_turtle", () -> EntityType.Builder.of(CommonSnappingTurtleEntity::new, MobCategory.CREATURE).sized(1.2F, 0.5F).build("common_snapping_turtle"));
 
     public static RegistryObject<EntityType<ManowarEntity>> MAN_O_WAR = ENTITY.register("man_of_war", () -> EntityType.Builder.of(ManowarEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("man_of_war"));
     public static RegistryObject<EntityType<UpsidedownjellyEntity>> UPSIDE_DOWN_JELLY= ENTITY.register("upside_down_jelly", () -> EntityType.Builder.of(UpsidedownjellyEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("upside_down_jelly"));

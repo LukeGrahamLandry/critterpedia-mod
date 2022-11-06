@@ -1,10 +1,7 @@
 package ca.lukegrahamlandry.critterpedia.content;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
-import ca.lukegrahamlandry.critterpedia.content.entity.CrocodileEntity;
-import ca.lukegrahamlandry.critterpedia.content.entity.FlyEntity;
-import ca.lukegrahamlandry.critterpedia.content.entity.PsychedelicjellyEntity;
-import ca.lukegrahamlandry.critterpedia.content.entity.UpsidedownjellyEntity;
+import ca.lukegrahamlandry.critterpedia.content.entity.*;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -35,5 +32,6 @@ event.put(EntityInit.MAN_O_WAR.get(), UpsidedownjellyEntity.createAttributes().b
         event.put(EntityInit.SALT_WATER_CROCODILE.get(), CrocodileEntity.createAttributes().build());
         event.put(EntityInit.PSYCHEDELIC_JELLY.get(), PsychedelicjellyEntity.createAttributes().build());
         event.put(EntityInit.UPSIDE_DOWN_JELLY.get(), UpsidedownjellyEntity.createAttributes().build());
+        event.put(EntityInit.COMMON_SNAPPER.get(), CommonSnappingTurtleEntity.createMobAttributes().build());
     }
 }
