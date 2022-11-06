@@ -133,22 +133,8 @@ public class PsychedelicjellyEntity extends AbstractFish implements IAnimatable 
             this.playSound(SoundEvents.PUFFER_FISH_STING, 1.0F, 1.0F);
         }
     }
-    public float rotate(Rotation pTransformRotation) {
 
-
-        float f = Mth.wrapDegrees(this.getYRot());
-        switch(pTransformRotation) {
-            case CLOCKWISE_180:
-                return f + 180.0F;
-            case COUNTERCLOCKWISE_90:
-                return f + 270.0F;
-            case CLOCKWISE_90:
-                return f + 90.0F;
-            default:
-                return f;
-        }
     }
 
-}
 
 //note: I like the way its moving more often with the squid AI but I don't like how often and how far it moves, working on that

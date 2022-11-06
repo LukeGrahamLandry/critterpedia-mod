@@ -14,6 +14,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -28,7 +29,18 @@ public class CommonSnappingTurtleEntity extends Animal implements IAnimatable{
 
     public CommonSnappingTurtleEntity(EntityType<? extends Animal> p_27557_, Level p_27558_) {
         super(p_27557_, p_27558_);
+
+
     }
+
+    static List<LoopAnimationHandler<CommonSnappingTurtleEntity>> movementAnimations = Arrays.asList(
+            new LoopAnimationHandler<>(CommonSnappingTurtleEntity.class, "animation.commonSnappingTurtle.swim", (croc) -> croc.isInWater() && croc.navigation.isInProgress()),
+            new LoopAnimationHandler<>(CommonSnappingTurtleEntity.class, "animation.commonSnappingTurtle.float", (croc) -> croc.isInWater() && !croc.navigation.isInProgress()),
+            new LoopAnimationHandler<>(CommonSnappingTurtleEntity.class, "animation.commonSnappingTurtle.walk", (croc) -> !croc.isInWater() && croc.navigation.isInProgress()),
+            new LoopAnimationHandler<>(CommonSnappingTurtleEntity.class, "animation.commonSnappingTurtle.idle", (croc) -> !croc.isInWater() && !croc.navigation.isInProgress())
+    );
+
+
 
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new BreathAirGoal(this));
@@ -61,8 +73,17 @@ public class CommonSnappingTurtleEntity extends Animal implements IAnimatable{
     }
 
 
+    private final AnimationFactory factory = new AnimationFactory(this);
+
     @Override
     public AnimationFactory getFactory() {
-        return null;
+        return factory;
     }
-}
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+
+        movementAnimations.forEach((anim) -> anim.setupData(this));
+    }
+    }
