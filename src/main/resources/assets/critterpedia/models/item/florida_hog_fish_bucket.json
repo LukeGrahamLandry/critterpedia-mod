@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "critterpedia:hogfish_bucket"
+    "layer0": "critterpedia:item/hogfish_bucket"
 
   }
 }

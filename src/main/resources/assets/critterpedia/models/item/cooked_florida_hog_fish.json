@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "critterpedia:hogfish_cooked"
+    "layer0": "critterpedia:item/hogfish_cooked"
   }
 }

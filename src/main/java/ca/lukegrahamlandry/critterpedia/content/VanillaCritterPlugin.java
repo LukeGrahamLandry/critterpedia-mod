@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +18,13 @@ import java.util.List;
 public class VanillaCritterPlugin implements CritterPlugin {
     private static final List<CritterType> critters = new ArrayList<>();
 
-    public static ResourceLocation FISH = new ResourceLocation("minecraft:fish");
-    public static ResourceLocation BIRD = new ResourceLocation("minecraft:bird");
-    public static ResourceLocation BAT = new ResourceLocation("minecraft:bat");
-    public static ResourceLocation MAMMAL = new ResourceLocation("minecraft:mammal");
-    public static ResourceLocation INSECT = new ResourceLocation("minecraft:insect");
+    public static ResourceLocation FISH = new ResourceLocation("critter:fish");
+    public static ResourceLocation BIRD = new ResourceLocation("critter:bird");
+    ResourceLocation AMPHIBIAN = new ResourceLocation("critter:amphibian");
+    ResourceLocation REPTILE = new ResourceLocation("critter:reptile");
+    public static ResourceLocation MAMMAL = new ResourceLocation("mammal");
+    public static ResourceLocation INSECT = new ResourceLocation("critter:insect");
+    public static ResourceLocation SEA_CRITTER = new ResourceLocation("critter:sea_critter");
 
     @Override
     public List<CritterType> getTypes() {
@@ -31,6 +34,7 @@ public class VanillaCritterPlugin implements CritterPlugin {
         make("salmon", FISH, Items.SALMON).entity(EntityType.SALMON);
         make("pufferfish", FISH, Items.PUFFERFISH).entity(EntityType.PUFFERFISH);
         make("tropical_fish.json", FISH, Items.TROPICAL_FISH).entity(EntityType.TROPICAL_FISH);
+        make("florida_hog_fish.json", FISH, Items.BUCKET).entity(EntityType.MANTA_RAY);
 
         make("parrot", BIRD, Items.RED_DYE).entity(EntityType.PARROT);
         make("chicken", BIRD, Items.FEATHER).entity(EntityType.CHICKEN);
@@ -39,6 +43,8 @@ public class VanillaCritterPlugin implements CritterPlugin {
         make("pig", MAMMAL, Items.PORKCHOP).entity(EntityType.PIG);
         make("goat", MAMMAL, Items.GOAT_SPAWN_EGG).entity(EntityType.GOAT);
         make("ocelot", MAMMAL, Items.OCELOT_SPAWN_EGG).entity(EntityType.OCELOT);
+
+
 
         return critters;
     }
@@ -49,8 +55,11 @@ public class VanillaCritterPlugin implements CritterPlugin {
 
         categories.add(new CritterCategory(FISH, "bucket").icon(Items.SALMON));
         categories.add(new CritterCategory(BIRD, "net").icon(Items.FEATHER));
-        categories.add(new CritterCategory(MAMMAL,"net").icon(Items.BAT_SPAWN_EGG));
-        categories.add(new CritterCategory(INSECT, "net").icon(Items.BEE_NEST));
+        categories.add(new CritterCategory(MAMMAL,"net").icon(Items.MILK_BUCKET));
+        categories.add(new CritterCategory(INSECT, "net").icon(Items.HONEYCOMB));
+        categories.add(new CritterCategory(AMPHIBIAN, "bucket").icon(Items.AXOLOTL_BUCKET));
+        categories.add(new CritterCategory(REPTILE, "net").icon(Items.TURTLE_EGG));
+        categories.add(new CritterCategory(SEA_CRITTER, "bucket").icon(Items.SEA_PICKLE));
 
         return categories;
     }
@@ -64,13 +73,13 @@ public class VanillaCritterPlugin implements CritterPlugin {
     // Helpers
 
     private CritterType make(String id, ResourceLocation category, Item icon){
-        CritterType t = new CritterType(new ResourceLocation("minecraft", id), category).icon(icon);
+        CritterType t = new CritterType(new ResourceLocation("critter", id), category).icon(icon);
         critters.add(t);
         return t;
     }
 
     private CritterType make(String id, ResourceLocation category, EntityType icon){
-        CritterType t = new CritterType(new ResourceLocation("minecraft", id), category).icon(() -> icon);
+        CritterType t = new CritterType(new ResourceLocation("critter", id), category).icon(() -> icon);
         critters.add(t);
         return t;
     }

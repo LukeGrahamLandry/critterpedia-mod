@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,15 +30,17 @@ public class ContentCritterPlugin implements CritterPlugin {
         return t;
     }
 
+    ResourceLocation MAMMAL = new ResourceLocation("critter:mammal");
+    ResourceLocation SEA_CRITTER = new ResourceLocation("critter:sea_critter");
+    ResourceLocation FISH = new ResourceLocation("critter:fish");
+
+    ResourceLocation AMPHIBIAN = new ResourceLocation("critter:amphibian");
+    ResourceLocation REPTILE = new ResourceLocation("critter:reptile");
     @Override
     public List<CritterType> getTypes() {
         critters.clear();
 
-        ResourceLocation FISH = new ResourceLocation("minecraft:fish");
-        ResourceLocation BIRD = new ResourceLocation("minecraft:bird");
-        ResourceLocation BAT = new ResourceLocation("minecraft:bat");
-        ResourceLocation MAMMAL = new ResourceLocation("minecraft:mammal");
-        ResourceLocation INSECT = new ResourceLocation("minecraft:insect");
+        make("manta_ray", FISH, Items.BUCKET).entity(EntityType.MantaRayEntity);
 
         return critters;
     }
@@ -46,6 +49,12 @@ public class ContentCritterPlugin implements CritterPlugin {
     public List<CritterCategory> getCategories() {
         List<CritterCategory> categories = new ArrayList<>();
 
+
+        categories.add(new CritterCategory(AMPHIBIAN, "bucket").icon(Items.AXOLOTL_BUCKET));
+        categories.add(new CritterCategory(REPTILE, "net").icon(Items.TURTLE_EGG));
+        categories.add(new CritterCategory(MAMMAL, "net").icon(Items.MILK_BUCKET));
+
+        categories.add(new CritterCategory(SEA_CRITTER, "bucket").icon(Items.SEA_PICKLE));
         return categories;
     }
 
@@ -54,3 +63,4 @@ public class ContentCritterPlugin implements CritterPlugin {
         return ModMain.MOD_ID;
     }
 }
+

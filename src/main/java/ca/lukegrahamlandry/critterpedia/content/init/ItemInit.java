@@ -23,9 +23,9 @@ import java.util.function.Supplier;
 public class ItemInit {
     public static final DeferredRegister<Item> ITEM = DeferredRegister.create(ForgeRegistries.ITEMS, ModMain.MOD_ID);
 
-    public static RegistryObject<Item> SMALL_ROD = ITEM.register("small_fishing_rod", () -> new ModFishingRod(new Item.Properties().durability(500).tab(CreativeModeTab.TAB_TOOLS), new ResourceLocation("critterpedia:small_rod")));
+    public static RegistryObject<Item> SMALL_ROD = ITEM.register("small_fishing_rod", () -> new ModFishingRod(new Item.Properties().durability(500).tab(CreativeModeTab.TAB_TOOLS), new ResourceLocation("critterpedia:fishing_pole")));
 
-    public static RegistryObject<Item> LARGE_ROD = ITEM.register("large_fishing_rod", () -> new ModFishingRod(new Item.Properties().durability(500).tab(CreativeModeTab.TAB_TOOLS), new ResourceLocation("critterpedia:large_rod")));
+    public static RegistryObject<Item> LARGE_ROD = ITEM.register("large_fishing_rod", () -> new ModFishingRod(new Item.Properties().durability(500).tab(CreativeModeTab.TAB_TOOLS), new ResourceLocation("critterpedia:large_fishing_pole")));
 
     public static Map<ResourceLocation, Supplier<Item>> smallFishBuckets = new HashMap<>();
 
