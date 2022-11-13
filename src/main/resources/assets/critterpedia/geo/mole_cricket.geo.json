@@ -1,0 +1,148 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 24,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Body",
+					"pivot": [0, 2, 0],
+					"cubes": [
+						{"origin": [-2, 0, -4], "size": [4, 4, 8], "uv": [0, 20]}
+					]
+				},
+				{
+					"name": "RightShovel",
+					"parent": "Body",
+					"pivot": [-2, 1, -3],
+					"rotation": [6, 0, 0],
+					"cubes": [
+						{"origin": [-3, 0, -6], "size": [1, 2, 4], "uv": [0, 13]}
+					]
+				},
+				{
+					"name": "RightClaw",
+					"parent": "RightShovel",
+					"pivot": [-2.5, 1, -6],
+					"cubes": [
+						{"origin": [-2.5, 0, -7], "size": [0, 2, 1], "uv": [0, 13], "mirror": true}
+					]
+				},
+				{
+					"name": "LeftShovel",
+					"parent": "Body",
+					"pivot": [1, 1, -3],
+					"rotation": [6, 0, 0],
+					"cubes": [
+						{"origin": [2, 0, -6], "size": [1, 2, 4], "uv": [0, 13], "mirror": true}
+					]
+				},
+				{
+					"name": "LeftClaw",
+					"parent": "LeftShovel",
+					"pivot": [2.5, 1, -6],
+					"cubes": [
+						{"origin": [2.5, 0, -7], "size": [0, 2, 1], "uv": [0, 13]}
+					]
+				},
+				{
+					"name": "RightLeg1",
+					"parent": "Body",
+					"pivot": [-1, 1, -1],
+					"rotation": [0, 0, 40],
+					"cubes": [
+						{"origin": [-3, -2, -1], "size": [2, 3, 0], "uv": [0, 9]}
+					]
+				},
+				{
+					"name": "LeftLeg1",
+					"parent": "Body",
+					"pivot": [1, 1, -1],
+					"rotation": [0, 0, -40],
+					"cubes": [
+						{"origin": [1, -2, -1], "size": [2, 3, 0], "uv": [0, 9], "mirror": true}
+					]
+				},
+				{
+					"name": "RightAntenna",
+					"parent": "Body",
+					"pivot": [-1, 2, -4],
+					"rotation": [-30, 0, 0],
+					"cubes": [
+						{"origin": [-1, 2, -8], "size": [0, 1, 4], "uv": [5, 6], "mirror": true}
+					]
+				},
+				{
+					"name": "LeftAntenna",
+					"parent": "Body",
+					"pivot": [1, 2, -4],
+					"rotation": [-30, 0, 0],
+					"cubes": [
+						{"origin": [1, 2, -8], "size": [0, 1, 4], "uv": [5, 6]}
+					]
+				},
+				{
+					"name": "RightThigh",
+					"parent": "Body",
+					"pivot": [-2, 1, 0],
+					"rotation": [40, 0, 0],
+					"cubes": [
+						{"origin": [-3, 0, 0], "size": [1, 2, 3], "uv": [0, 3]}
+					]
+				},
+				{
+					"name": "RightLeg2",
+					"parent": "RightThigh",
+					"pivot": [-2.5, 0, 2],
+					"rotation": [50, 0, 0],
+					"cubes": [
+						{"origin": [-2.5, -3, 0], "size": [0, 3, 3], "uv": [10, 2], "mirror": true}
+					]
+				},
+				{
+					"name": "LeftThigh",
+					"parent": "Body",
+					"pivot": [2, 1, 0],
+					"rotation": [40, 0, 0],
+					"cubes": [
+						{"origin": [2, 0, 0], "size": [1, 2, 3], "uv": [0, 3], "mirror": true}
+					]
+				},
+				{
+					"name": "LeftLeg2",
+					"parent": "LeftThigh",
+					"pivot": [2.5, 0, 2],
+					"rotation": [50, 0, 0],
+					"cubes": [
+						{"origin": [2.5, -3, 0], "size": [0, 3, 3], "uv": [10, 2]}
+					]
+				},
+				{
+					"name": "LeftTail",
+					"parent": "Body",
+					"pivot": [1, 1, 4],
+					"rotation": [10, 0, 0],
+					"cubes": [
+						{"origin": [1, 1, 4], "size": [0, 1, 5], "uv": [0, -4]}
+					]
+				},
+				{
+					"name": "RightTail",
+					"parent": "Body",
+					"pivot": [-1, 1, 4],
+					"rotation": [10, 0, 0],
+					"cubes": [
+						{"origin": [-1, 1, 4], "size": [0, 1, 5], "uv": [0, -4], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

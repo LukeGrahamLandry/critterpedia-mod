@@ -51,13 +51,16 @@ EntityRenderers.register(EntityInit.PSYCHEDELIC_JELLY.get(), (ctx) -> new Generi
       EntityRenderers.register(EntityInit.BRAZILIAN_PORCUPINE.get(), (ctx) -> new GenericGeoRender<>(ctx,"brazilian_porcupine"));
       EntityRenderers.register(EntityInit.VINE_SNAKE.get(), (ctx) -> new GenericGeoRender<>(ctx, "vine_snake"));
 
-
-
-
-
-
-
-
+      EntityRenderers.register(EntityInit.AMAZON_PUFFER.get(), (ctx) -> new GenericGeoRender<>(ctx, "amazon_puffer"));
+EntityRenderers.register(EntityInit.ANTARCTIC_KRILL.get(), (ctx) -> new GenericGeoRender<>(ctx, "antarctic_krill"));
+EntityRenderers.register(EntityInit.BLUE_RINGED_OCTOPUS.get(), (ctx) -> new GenericGeoRender<>(ctx, "blue_ringed_octopus"));
+EntityRenderers.register(EntityInit.LESSER_MOLE_RAT.get(), (ctx) -> new GenericGeoRender<>(ctx, "lesser_mole_rat"));
+EntityRenderers.register(EntityInit.RED_KNEE_TARANTULA.get(), (ctx) -> new GenericGeoRender<>(ctx, "red_knee_tarantula"));
+EntityRenderers.register(EntityInit.CLOWN_TRIGGERFISH.get(), (ctx) -> new GenericGeoRender<>(ctx, "clown_triggerfish"));
+EntityRenderers.register(EntityInit.MOLE_CRICKET.get(), (ctx) -> new GenericGeoRender<>(ctx, "mole_cricket"));
+EntityRenderers.register(EntityInit.NAPOLEON_WRASSE.get(), (ctx) -> new GenericGeoRender<>(ctx, "football_fish"));
+EntityRenderers.register(EntityInit.GREAT_WHITE_SHARK.get(), (ctx) -> new GenericGeoRender<>(ctx, "great_white_shark"));
+EntityRenderers.register(EntityInit.FOOTBALL_FISH.get(), (ctx) -> new GenericGeoRender<>(ctx, "football_fish"));
 
 
 

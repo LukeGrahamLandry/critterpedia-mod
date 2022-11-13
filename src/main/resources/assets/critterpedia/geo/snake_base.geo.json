@@ -1,0 +1,104 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.SnakeBase",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "3",
+					"parent": "root",
+					"pivot": [0, 1.5, 10.5],
+					"cubes": [
+						{"origin": [-1.5, 0, 10.5], "size": [3, 3, 6], "inflate": 0.01, "uv": [0, 11]}
+					]
+				},
+				{
+					"name": "4",
+					"parent": "root",
+					"pivot": [0, 1.5, 16],
+					"cubes": [
+						{"origin": [-1.5, 0, 16], "size": [3, 3, 6], "uv": [19, 11]}
+					]
+				},
+				{
+					"name": "5",
+					"parent": "root",
+					"pivot": [0, 1.5, 21.5],
+					"cubes": [
+						{"origin": [-1, 0, 21.5], "size": [2, 3, 6], "inflate": -0.01, "uv": [20, 1]}
+					]
+				},
+				{
+					"name": "6",
+					"parent": "root",
+					"pivot": [0, 1.5, 27],
+					"cubes": [
+						{"origin": [-0.5, 0.5, 27], "size": [1, 2, 6], "uv": [36, 22]}
+					]
+				},
+				{
+					"name": "look1",
+					"pivot": [0, 1.5, 10.5]
+				},
+				{
+					"name": "2",
+					"parent": "look1",
+					"pivot": [0, 1.5, 5],
+					"cubes": [
+						{"origin": [-1.5, 0, 5], "size": [3, 3, 6], "uv": [0, 21]}
+					]
+				},
+				{
+					"name": "look2",
+					"parent": "look1",
+					"pivot": [0, 1.5, 5]
+				},
+				{
+					"name": "1",
+					"parent": "look2",
+					"pivot": [0, 1.5, -0.5],
+					"cubes": [
+						{"origin": [-1, 0, -0.5], "size": [2, 3, 6], "uv": [0, 1]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "look2",
+					"pivot": [0, 1.5, 0],
+					"cubes": [
+						{"origin": [-1.5, 0.5, -5], "size": [3, 2, 5], "uv": [19, 23]}
+					]
+				},
+				{
+					"name": "lefteyelash",
+					"parent": "head",
+					"pivot": [-1.5, 2.5, -3],
+					"rotation": [0, 0, 10],
+					"cubes": [
+						{"origin": [-2.5, 2.5, -3], "size": [1, 0, 2], "uv": [37, 25]}
+					]
+				},
+				{
+					"name": "righteyelash",
+					"parent": "head",
+					"pivot": [1.5, 2.5, -3],
+					"rotation": [0, 0, -10],
+					"cubes": [
+						{"origin": [1.5, 2.5, -3], "size": [1, 0, 2], "uv": [34, 25]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -40,9 +40,16 @@ event.put(EntityInit.MAN_O_WAR.get(), UpsidedownjellyEntity.createAttributes().b
    event.put(EntityInit.BRAZILIAN_PORCUPINE.get(),BrazilianPorcupineEntity.createMobAttributes().build());
    event.put(EntityInit.EMPEROR_SCORPION.get(), EmperorScorpionEntity.createMobAttributes().build());
 event.put(EntityInit.VINE_SNAKE.get(), VineSnakeEntity.createMobAttributes().build());
-
-
-
+event.put(EntityInit.AMAZON_PUFFER.get(), AmazonPufferEntity.createMobAttributes().build());
+event.put(EntityInit.ANTARCTIC_KRILL.get(), AntarcticKrillEntity.createMobAttributes().build());
+event.put(EntityInit.BLUE_RINGED_OCTOPUS.get(), BlueRingedOctopusEntity.createMobAttributes().build());
+event.put(EntityInit.CLOWN_TRIGGERFISH.get(), ClownTriggerfishEntity.createMobAttributes().build());
+event.put(EntityInit.LESSER_MOLE_RAT.get(), LesserMoleRatEntity.createMobAttributes().build() );
+event.put(EntityInit.RED_KNEE_TARANTULA.get(), RedKneeTarantulaEntity.createMobAttributes().build());
+event.put(EntityInit.NAPOLEON_WRASSE.get(), NapoleonWrasseEntity.createMobAttributes().build());
+event.put(EntityInit.MOLE_CRICKET.get(), MoleCricketEntity.createMobAttributes().build());
+event.put(EntityInit.GREAT_WHITE_SHARK.get(), GreatWhiteSharkEntity.createMobAttributes().build());
+event.put(EntityInit.FOOTBALL_FISH.get(), FootballFishEntity.createAttributes().build());
 
     }
 

@@ -10,7 +10,9 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.apache.logging.log4j.core.pattern.AbstractStyleNameConverter;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +39,28 @@ public static RegistryObject<EntityType<EmperorScorpionEntity>> EMPEROR_SCORPION
     public static RegistryObject<EntityType<UpsidedownjellyEntity>> UPSIDE_DOWN_JELLY= ENTITY.register("upside_down_jelly", () -> EntityType.Builder.of(UpsidedownjellyEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("upside_down_jelly"));
     public static RegistryObject<EntityType<PsychedelicjellyEntity>> PSYCHEDELIC_JELLY = ENTITY.register("psychedelic_jelly", () -> EntityType.Builder.of(PsychedelicjellyEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("psychedelic_jelly"));
 public static RegistryObject<EntityType<VineSnakeEntity>> VINE_SNAKE = ENTITY.register("vine_snake", () -> EntityType.Builder.of(VineSnakeEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("vine_snake"));
+public static RegistryObject<EntityType<LesserMoleRatEntity>> LESSER_MOLE_RAT = ENTITY.register("lesser_mole_rat", () -> EntityType.Builder.of(LesserMoleRatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("lesser_mole_rat"));
+public static RegistryObject<EntityType<RedKneeTarantulaEntity>> RED_KNEE_TARANTULA = ENTITY.register("red_knee_tarantula", () -> EntityType.Builder.of(RedKneeTarantulaEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("red_knee_tarantula"));
+public static RegistryObject<EntityType<ClownTriggerfishEntity>> CLOWN_TRIGGERFISH = ENTITY.register("clown_triggerfish", () -> EntityType.Builder.of(ClownTriggerfishEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("clown_triggerfish"));
+
+public static RegistryObject<EntityType<BlueRingedOctopusEntity>> BLUE_RINGED_OCTOPUS = ENTITY.register("blue_ringed_octopus", () -> EntityType.Builder.of(BlueRingedOctopusEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("blue_ringed_octopus"));
+public static RegistryObject<EntityType<AmazonPufferEntity>> AMAZON_PUFFER = ENTITY.register("amazon_puffer", () -> EntityType.Builder.of(AmazonPufferEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("amazon_puffer"));
+public static RegistryObject<EntityType<AntarcticKrillEntity>> ANTARCTIC_KRILL = ENTITY.register("antarctic_krill", () -> EntityType.Builder.of(AntarcticKrillEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("antarctic_krill"));
+public static RegistryObject<EntityType<MoleCricketEntity>> MOLE_CRICKET = ENTITY.register("mole_cricket", () -> EntityType.Builder.of(MoleCricketEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("mole_cricket"));
+
+public static RegistryObject<EntityType<NapoleonWrasseEntity>> NAPOLEON_WRASSE = ENTITY.register("napoleon_wrasse", () -> EntityType.Builder.of(NapoleonWrasseEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("napoleon_wrasse"));
+
+public static RegistryObject<EntityType<GreatWhiteSharkEntity>> GREAT_WHITE_SHARK = ENTITY.register("great_white_shark", () -> EntityType.Builder.of(GreatWhiteSharkEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("great_white_shark"));
+public static RegistryObject<EntityType<FootballFishEntity>> FOOTBALL_FISH = ENTITY.register("football_fish", () -> EntityType.Builder.of(FootballFishEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("football_fish"));
+
+
+
+
+
+
+
+
+
     public static List<ResourceLocation> smallFish = new ArrayList<>();
 
     static {

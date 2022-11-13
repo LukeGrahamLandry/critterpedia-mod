@@ -1,0 +1,91 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"move": {
+			"loop": true,
+			"animation_length": 0.4483,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*800)*4", 0]
+					},
+					"position": {
+						"vector": [0, "math.cos(-40+query.anim_time*1600)*0.05", 0]
+					}
+				},
+				"RightShovel": {
+					"rotation": {
+						"vector": ["-math.cos(-80+query.anim_time*800+800)*5", "math.cos(-80+query.anim_time*800)*5", 0]
+					}
+				},
+				"LeftShovel": {
+					"rotation": {
+						"vector": ["-math.cos(-80+query.anim_time*800+800)*5", "math.cos(-80+query.anim_time*800)*5", 0]
+					}
+				},
+				"RightLeg1": {
+					"rotation": {
+						"vector": ["math.cos(-40+query.anim_time*800)*10", 0, "math.cos(-40+query.anim_time*800+800)*10"]
+					},
+					"position": {
+						"vector": [0, "0.5-math.cos(-40+query.anim_time*800+400)*0.25", 0]
+					}
+				},
+				"LeftLeg1": {
+					"rotation": {
+						"vector": ["-math.cos(-40+query.anim_time*800)*10", 0, "-math.cos(-40+query.anim_time*800+800)*10"]
+					},
+					"position": {
+						"vector": [0, "0.5+math.cos(-40+query.anim_time*800+400)*0.25", 0]
+					}
+				},
+				"RightAntenna": {
+					"rotation": {
+						"vector": [0, "math.cos(-1200+query.anim_time*800)*8", 0]
+					}
+				},
+				"LeftAntenna": {
+					"rotation": {
+						"vector": [0, "math.cos(-1200+query.anim_time*800)*8", 0]
+					}
+				},
+				"RightThigh": {
+					"rotation": {
+						"vector": ["math.cos(-40+query.anim_time*800)*10", 0, 0]
+					},
+					"position": {
+						"vector": [0, "0.5-math.cos(-40+query.anim_time*800+400)*0.25", 0]
+					}
+				},
+				"RightLeg2": {
+					"rotation": {
+						"vector": ["-math.cos(query.anim_time*800)*10", 0, 0]
+					}
+				},
+				"LeftThigh": {
+					"rotation": {
+						"vector": ["-math.cos(-40+query.anim_time*800)*10", 0, 0]
+					},
+					"position": {
+						"vector": [0, "0.5+math.cos(-40+query.anim_time*800+400)*0.25", 0]
+					}
+				},
+				"LeftLeg2": {
+					"rotation": {
+						"vector": ["math.cos(query.anim_time*800)*10", 0, 0]
+					}
+				},
+				"LeftTail": {
+					"rotation": {
+						"vector": [0, "math.cos(-1200+query.anim_time*800)*8", 0]
+					}
+				},
+				"RightTail": {
+					"rotation": {
+						"vector": [0, "math.cos(-1200+query.anim_time*800)*8", 0]
+					}
+				}
+			}
+		}
+	}
+}

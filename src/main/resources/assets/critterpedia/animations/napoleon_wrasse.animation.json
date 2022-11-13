@@ -1,0 +1,44 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.model.new": {
+			"loop": true,
+			"animation_length": 1.79167,
+			"bones": {
+				"bone_body": {
+					"rotation": {
+						"vector": ["math.cos(query.anim_time*200+200)*2", "-math.cos(query.anim_time*400)*4", 0]
+					},
+					"position": {
+						"vector": [0, "math.cos(-20+query.anim_time*200)*0.5", 0]
+					}
+				},
+				"bone_PFin1": {
+					"rotation": {
+						"vector": ["-math.cos(-40+query.anim_time*200+200)*8", "math.cos(-40+query.anim_time*200)*12", "math.cos(-80+query.anim_time*400)*8"]
+					}
+				},
+				"bone_PFin2": {
+					"rotation": {
+						"vector": ["-math.cos(-40+query.anim_time*200+200)*8", "-math.cos(-40+query.anim_time*200)*12", "math.cos(-80+query.anim_time*400)*8"]
+					}
+				},
+				"bone_tail": {
+					"rotation": {
+						"vector": ["-math.cos(-48+query.anim_time*400+400)*8", "-math.cos(-40+query.anim_time*400)*44", 0]
+					}
+				},
+				"bone_LFin1": {
+					"rotation": {
+						"vector": ["-math.cos(-40+query.anim_time*400+400)*8", "-20+math.cos(-20+query.anim_time*400)*24", 0]
+					}
+				},
+				"bone_LFin2": {
+					"rotation": {
+						"vector": ["-math.cos(-40+query.anim_time*400+400)*8", "20-math.cos(-20+query.anim_time*400)*24", 0]
+					}
+				}
+			}
+		}
+	}
+}
