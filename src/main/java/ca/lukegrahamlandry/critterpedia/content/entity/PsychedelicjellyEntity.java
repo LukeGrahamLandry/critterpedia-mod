@@ -1,6 +1,7 @@
 package ca.lukegrahamlandry.critterpedia.content.entity;
 
 import com.mojang.datafixers.optics.Wander;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -9,11 +10,14 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.GlowSquid;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -28,7 +32,9 @@ import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Rotation;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -40,29 +46,34 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class PsychedelicjellyEntity extends AbstractFish implements IAnimatable {
 
-    public float xBodyRot;
-    public float xBodyRotO;
-    public float zBodyRot;
-    public float zBodyRotO;
 
-    private static final EntityDataAccessor<Integer> DATA_DARK_TICKS_REMAINING = SynchedEntityData.defineId(PsychedelicjellyEntity.class, EntityDataSerializers.INT);
-
-    public PsychedelicjellyEntity(EntityType<? extends PsychedelicjellyEntity> p_30004, Level p_29363_) {
-
-        super(p_30004, p_29363_);
+    public PsychedelicjellyEntity(EntityType<? extends AbstractFish> p_27461_, Level p_27462_) {
+        super(p_27461_, p_27462_);
     }
-
 
     protected void registerGoals() {
-
-        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0D, 10));
-        this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-
+        this.goalSelector.addGoal(1, new RandomSwimmingGoal(this, 1.0D, 40));
+        this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
+
+ public SoundEvent getAmbientSound() {
+          return null;
+     }
+     public SoundEvent getDeathSound() {
+          return null;
+     }
+        public SoundEvent getHurtSound(DamageSource p_27480_) {
+            return null;
+        }
+
+
+
+
     public void aiStep() {
         if (!this.isInWater() && this.onGround && this.verticalCollision) {
-            this.setDeltaMovement(this.getDeltaMovement().add((double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.05F), (double)0.4F, (double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.05F)));
+            this.setDeltaMovement(this.getDeltaMovement().add((double) ((this.random.nextFloat() * 2.0F - 1.0F) * 0.05F), (double) 0.4F, (double) ((this.random.nextFloat() * 2.0F - 1.0F) * 0.05F)));
             this.onGround = false;
             this.hasImpulse = true;
             this.playSound(this.getFlopSound(), this.getSoundVolume(), this.getVoicePitch());
@@ -134,7 +145,11 @@ public class PsychedelicjellyEntity extends AbstractFish implements IAnimatable 
         }
     }
 
-    }
+
+
+}
+
+
 
 
 //note: I like the way its moving more often with the squid AI but I don't like how often and how far it moves, working on that

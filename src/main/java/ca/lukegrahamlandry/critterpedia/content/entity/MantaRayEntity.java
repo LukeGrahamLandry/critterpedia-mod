@@ -68,4 +68,7 @@ public class MantaRayEntity extends AbstractFish implements IAnimatable {
     public ItemStack getBucketItemStack() {
         return ItemStack.EMPTY;
     }
+
+
+
 }
