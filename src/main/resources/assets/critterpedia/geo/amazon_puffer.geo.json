@@ -1,0 +1,80 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.Amazonpuffer",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Body",
+					"pivot": [0, 1, 0],
+					"cubes": [
+						{"origin": [-1.5, 0, -2.5], "size": [3, 2, 5], "uv": [0, 15]}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "Body",
+					"pivot": [0, 1, 2.5],
+					"cubes": [
+						{"origin": [-1.5, 1, 2.5], "size": [3, 0, 3], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "ArmL",
+					"parent": "Body",
+					"pivot": [-1.5, 0.5, -1.5],
+					"cubes": [
+						{"origin": [-2.5, 0.5, -1.5], "size": [1, 0, 2], "uv": [2, 3]}
+					]
+				},
+				{
+					"name": "ArmR",
+					"parent": "Body",
+					"pivot": [1.5, 0.5, -1.5],
+					"cubes": [
+						{"origin": [1.5, 0.5, -1.5], "size": [1, 0, 2], "uv": [0, 3]}
+					]
+				},
+				{
+					"name": "Dorsalfin",
+					"parent": "Body",
+					"pivot": [0, 1.5, 2],
+					"cubes": [
+						{"origin": [0, 1.5, 2], "size": [0, 1, 1], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "PuffupBody",
+					"parent": "Body",
+					"pivot": [0, 1, 1.5],
+					"cubes": [
+						{"origin": [-3, -2, -3], "size": [6, 6, 9], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Puffupdorsalfin",
+					"parent": "PuffupBody",
+					"pivot": [0, 4, 3],
+					"cubes": [
+						{"origin": [0, 4, 3], "size": [0, 1, 2], "uv": [0, 4]}
+					]
+				},
+				{
+					"name": "PuffupBottomfin",
+					"parent": "PuffupBody",
+					"pivot": [0, -2, 3],
+					"cubes": [
+						{"origin": [0, -3, 3], "size": [0, 1, 2], "uv": [0, 3]}
+					]
+				}
+			]
+		}
+	]
+}

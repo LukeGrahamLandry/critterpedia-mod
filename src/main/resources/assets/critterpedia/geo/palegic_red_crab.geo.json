@@ -1,0 +1,102 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 1.8, 0],
+					"cubes": [
+						{"origin": [-1.5, 0.8, -1.5], "size": [3, 2, 3], "uv": [6, 0]}
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "body",
+					"pivot": [0, 1.8, 1.5],
+					"cubes": [
+						{"origin": [-1.5, 1.8, 1.5], "size": [3, 0, 3], "uv": [4, 5]}
+					]
+				},
+				{
+					"name": "clawLeft",
+					"parent": "body",
+					"pivot": [-1.5, 1.8, -1],
+					"cubes": [
+						{"origin": [-4.5, 1.8, -5.5], "size": [3, 0, 5], "uv": [-5, 5]}
+					]
+				},
+				{
+					"name": "clawRight",
+					"parent": "body",
+					"pivot": [1.5, 1.8, -1],
+					"cubes": [
+						{"origin": [1.5, 1.8, -5.5], "size": [3, 0, 5], "uv": [-5, 5], "mirror": true}
+					]
+				},
+				{
+					"name": "legLeftFront",
+					"parent": "body",
+					"pivot": [-1.5, 1.8, -1],
+					"rotation": [18.26, -28.7, -23.48],
+					"cubes": [
+						{"origin": [-4.5, 0.8, -1.5], "size": [3, 1, 1], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "legLeftMiddle",
+					"parent": "body",
+					"pivot": [-1.5, 1.8, 0],
+					"rotation": [0, 0, -18.26],
+					"cubes": [
+						{"origin": [-4.5, 0.8, -0.5], "size": [3, 1, 1], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "legLeftBack",
+					"parent": "body",
+					"pivot": [-1.5, 1.8, 1],
+					"rotation": [-18.26, 28.7, -23.48],
+					"cubes": [
+						{"origin": [-4.5, 0.8, 0.5], "size": [3, 1, 1], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "legRightFront",
+					"parent": "body",
+					"pivot": [1.5, 1.8, -1],
+					"rotation": [18.26, 28.7, 23.48],
+					"cubes": [
+						{"origin": [1.5, 0.8, -1.5], "size": [3, 1, 1], "uv": [0, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "legRightMiddle",
+					"parent": "body",
+					"pivot": [1.5, 1.8, 0],
+					"rotation": [0, 0, 18.26],
+					"cubes": [
+						{"origin": [1.5, 0.8, -0.5], "size": [3, 1, 1], "uv": [0, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "legRightBack",
+					"parent": "body",
+					"pivot": [1.5, 1.8, 1],
+					"rotation": [-18.26, -28.7, 23.48],
+					"cubes": [
+						{"origin": [1.5, 0.8, 0.5], "size": [3, 1, 1], "uv": [0, 0], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

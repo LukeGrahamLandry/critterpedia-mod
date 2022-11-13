@@ -1,0 +1,92 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.Foxface",
+				"texture_width": 18,
+				"texture_height": 18,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Body",
+					"pivot": [0, 1.6, 0],
+					"cubes": [
+						{"origin": [-1, 0.1, -3.5], "size": [2, 3, 7], "uv": [0, 1]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "Body",
+					"pivot": [0, 1.6, -3.5],
+					"cubes": [
+						{"origin": [-0.5, 1.1, -5.5], "size": [1, 1, 2], "uv": [0, 4]}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "Body",
+					"pivot": [0, 1.6, 3.5],
+					"cubes": [
+						{"origin": [0, 0.1, 3.5], "size": [0, 3, 2], "uv": [0, -2]}
+					]
+				},
+				{
+					"name": "Dorsalfin",
+					"parent": "Body",
+					"pivot": [0, 3.1, 1.5],
+					"cubes": [
+						{"origin": [0, 3.1, -1.5], "size": [0, 2, 6], "uv": [0, 6]}
+					]
+				},
+				{
+					"name": "Anal",
+					"parent": "Body",
+					"pivot": [0, 0.1, 2.5],
+					"cubes": [
+						{"origin": [0, -1.9, 0.5], "size": [0, 2, 4], "uv": [0, 11]}
+					]
+				},
+				{
+					"name": "legL",
+					"parent": "Body",
+					"pivot": [-0.5, 0.1, -1],
+					"rotation": [0, 0, 45],
+					"cubes": [
+						{"origin": [-0.5, -0.9, -1.5], "size": [0, 1, 1], "uv": [12, 2]}
+					]
+				},
+				{
+					"name": "legR",
+					"parent": "Body",
+					"pivot": [0.5, 0.1, -1],
+					"rotation": [0, 0, -45],
+					"cubes": [
+						{"origin": [0.5, -0.9, -1.5], "size": [0, 1, 1], "uv": [12, 2], "mirror": true}
+					]
+				},
+				{
+					"name": "ArmL",
+					"parent": "Body",
+					"pivot": [-1, 1.1, -1.5],
+					"rotation": [0, 45, 0],
+					"cubes": [
+						{"origin": [-2, 0.6, -1.5], "size": [1, 1, 0], "uv": [12, 1]}
+					]
+				},
+				{
+					"name": "ArmR",
+					"parent": "Body",
+					"pivot": [1, 1.1, -1.5],
+					"rotation": [0, -45, 0],
+					"cubes": [
+						{"origin": [1, 0.6, -1.5], "size": [1, 1, 0], "uv": [12, 1], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}
