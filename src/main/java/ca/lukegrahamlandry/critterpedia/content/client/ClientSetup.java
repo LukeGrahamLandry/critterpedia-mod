@@ -36,13 +36,31 @@ public class ClientSetup {
 
         EntityRenderers.register(EntityInit.FLY.get(), FlyGeoRender::new);
         EntityRenderers.register(EntityInit.MANTA_RAY.get(), (ctx) -> new GenericGeoRender<>(ctx, "manta_ray"));
-        EntityRenderers.register(EntityInit.SALT_WATER_CROCODILE.get(), (ctx) -> new GenericGeoRender<>(ctx, "saltwatercroc"));
+        EntityRenderers.register(EntityInit.SALT_WATER_CROCODILE.get(), (ctx) -> new GenericGeoRender<>(ctx, "salt_water_crocodile"));
         EntityRenderers.register(EntityInit.BOW_HEAD_GUITAR_FISH.get(), BowheadGuitarFishRender::new);
-        EntityRenderers.register(EntityInit.MAN_O_WAR.get(),(ctx -> new GenericGeoRender<>(ctx,"manowar")));
+        EntityRenderers.register(EntityInit.MAN_O_WAR.get(),(ctx -> new GenericGeoRender<>(ctx,"man_o_war")));
         EntityRenderers.register(EntityInit.FLORIDA_HOG_FISH.get(), FloridaHogFishRender::new);
-EntityRenderers.register(EntityInit.PSYCHEDELIC_JELLY.get(), (ctx) -> new GenericGeoRender<> (ctx, "psychedelicjelly"));
-        EntityRenderers.register(EntityInit.UPSIDE_DOWN_JELLY.get(), (ctx) -> new GenericGeoRender<> (ctx, "upsidedownjelly"));
-        EntityRenderers.register(EntityInit.COMMON_SNAPPER.get(), (ctx) -> new GenericGeoRender<>(ctx, "commonsnappingturtle"));
+EntityRenderers.register(EntityInit.PSYCHEDELIC_JELLY.get(), (ctx) -> new GenericGeoRender<> (ctx, "psychedelic_jelly"));
+        EntityRenderers.register(EntityInit.UPSIDE_DOWN_JELLY.get(), (ctx) -> new GenericGeoRender<> (ctx, "upsidedown_jelly"));
+        EntityRenderers.register(EntityInit.COMMON_SNAPPER.get(), (ctx) -> new GenericGeoRender<>(ctx, "common_snapping_turtle"));
+
+
+        EntityRenderers.register(EntityInit.EMPEROR_SCORPION.get(), (ctx) -> new GenericGeoRender<> (ctx, "emperor_scorpion"));
+        EntityRenderers.register(EntityInit.ALLIGATOR_SNAPPER.get(), (ctx) -> new GenericGeoRender<>(ctx, "alligator_snapping_turtle"));
+        EntityRenderers.register(EntityInit.BLACK_WIDOW.get(), (ctx) -> new GenericGeoRender<>(ctx,"black_widow"));
+      EntityRenderers.register(EntityInit.BRAZILIAN_PORCUPINE.get(), (ctx) -> new GenericGeoRender<>(ctx,"brazilian_porcupine"));
+      EntityRenderers.register(EntityInit.VINE_SNAKE.get(), (ctx) -> new GenericGeoRender<>(ctx, "vine_snake"));
+
+
+
+
+
+
+
+
+
+
+
 
         // the string renders wrong
         EntityRenderers.register(EntityInit.BOBBER.get(), FishingHookRenderer::new);

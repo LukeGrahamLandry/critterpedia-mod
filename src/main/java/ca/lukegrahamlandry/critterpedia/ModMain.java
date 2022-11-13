@@ -3,6 +3,7 @@ package ca.lukegrahamlandry.critterpedia;
 import ca.lukegrahamlandry.critterpedia.base.api.Critters;
 import ca.lukegrahamlandry.critterpedia.base.network.NetworkInit;
 import ca.lukegrahamlandry.critterpedia.content.VanillaCritterPlugin;
+import ca.lukegrahamlandry.critterpedia.content.init.BlockInit;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
 import ca.lukegrahamlandry.critterpedia.content.init.ItemInit;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,7 +24,7 @@ public class ModMain {
         modEventBus.addListener(this::registerPlugins);
         EntityInit.ENTITY.register(modEventBus);
         ItemInit.ITEM.register(modEventBus);
-
+        BlockInit.BLOCK.register(modEventBus);
     }
 
     private void registerPlugins(final FMLCommonSetupEvent event) {

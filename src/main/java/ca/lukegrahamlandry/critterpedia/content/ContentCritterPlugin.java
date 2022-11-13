@@ -40,7 +40,6 @@ public class ContentCritterPlugin implements CritterPlugin {
     public List<CritterType> getTypes() {
         critters.clear();
 
-        make("manta_ray", FISH, Items.BUCKET).entity(EntityType.MantaRayEntity);
 
         return critters;
     }
