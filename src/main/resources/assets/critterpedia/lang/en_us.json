@@ -17,5 +17,11 @@
   "item.critterpedia.raw_bow_head_guitar_fish": "Bowhead guitarfish",
   "item.critterpedia.cooked_bow_head_guitar_fish": "Cooked Bowhead guitarfish",
   "item.critterpedia.bow_head_guitar_fish_bucket": "Bucket of Bowhead guitarfish",
-  "entity.critterpedia.salt_water_crocodile": "Salt water crocodile"
+  "entity.critterpedia.salt_water_crocodile": "Salt water crocodile",
+  "entity.critterpedia.alligator_snapping_turtle": "Alligator snapping turtle",
+    "entity.critterpedia.giant_clam": "Giant clam";
+  "entity.critterpedia.Amazonian_swordtail": "Amazonian swordtail",
+    "entity.critterpedia.amazon_puffer": "Amazon puffer",
+  "entity.critterpedia.antarctic_krill": "Antarctic krill",
+  "entity.critterpedia.black_widow": "Black widow"
 }

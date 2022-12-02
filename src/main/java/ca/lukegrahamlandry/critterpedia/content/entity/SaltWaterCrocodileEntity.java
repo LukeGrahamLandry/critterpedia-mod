@@ -35,13 +35,13 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import java.util.Arrays;
 import java.util.List;
 
-public class CrocodileEntity extends Animal implements IAnimatable {
-    static AnimationTimer<CrocodileEntity> attackTimer = new AnimationTimer<>(CrocodileEntity.class, "animation.saltwatercroc.bite", 20);
-    static List<LoopAnimationHandler<CrocodileEntity>> movementAnimations = Arrays.asList(
-            new LoopAnimationHandler<>(CrocodileEntity.class, "animation.saltwatercroc.swim", (croc) -> croc.isInWater() && croc.navigation.isInProgress()),
-        new LoopAnimationHandler<>(CrocodileEntity.class, "animation.saltwatercroc.float", (croc) -> croc.isInWater() && !croc.navigation.isInProgress()),
-         new LoopAnimationHandler<>(CrocodileEntity.class, "animation.saltwatercroc.walk", (croc) -> !croc.isInWater() && croc.navigation.isInProgress()),
-        new LoopAnimationHandler<>(CrocodileEntity.class, "animation.saltwatercroc.idle", (croc) -> !croc.isInWater() && !croc.navigation.isInProgress())
+public class SaltWaterCrocodileEntity extends Animal implements IAnimatable {
+    static AnimationTimer<SaltWaterCrocodileEntity> attackTimer = new AnimationTimer<>(SaltWaterCrocodileEntity.class, "animation.saltwatercroc.bite", 20);
+    static List<LoopAnimationHandler<SaltWaterCrocodileEntity>> movementAnimations = Arrays.asList(
+            new LoopAnimationHandler<>(SaltWaterCrocodileEntity.class, "animation.saltwatercroc.swim", (croc) -> croc.isInWater() && croc.navigation.isInProgress()),
+        new LoopAnimationHandler<>(SaltWaterCrocodileEntity.class, "animation.saltwatercroc.float", (croc) -> croc.isInWater() && !croc.navigation.isInProgress()),
+         new LoopAnimationHandler<>(SaltWaterCrocodileEntity.class, "animation.saltwatercroc.walk", (croc) -> !croc.isInWater() && croc.navigation.isInProgress()),
+        new LoopAnimationHandler<>(SaltWaterCrocodileEntity.class, "animation.saltwatercroc.idle", (croc) -> !croc.isInWater() && !croc.navigation.isInProgress())
     );
 
     static {
@@ -52,10 +52,10 @@ public class CrocodileEntity extends Animal implements IAnimatable {
         }));
     }
 
-    public CrocodileEntity(EntityType<CrocodileEntity> p_29362_, Level p_29363_) {
+    public SaltWaterCrocodileEntity(EntityType<SaltWaterCrocodileEntity> p_29362_, Level p_29363_) {
         super(p_29362_, p_29363_);
         this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
-        this.moveControl = new CrocodileEntity.CrocMoveControl(this);
+        this.moveControl = new SaltWaterCrocodileEntity.CrocMoveControl(this);
         this.maxUpStep = 1.0F;
     }
 
@@ -130,11 +130,11 @@ public class CrocodileEntity extends Animal implements IAnimatable {
 
     // Animations
 
-    private PlayState attackAnimationPredicate(AnimationEvent<CrocodileEntity> event) {
+    private PlayState attackAnimationPredicate(AnimationEvent<SaltWaterCrocodileEntity> event) {
         return attackTimer.checkAnimation(this, event) ? PlayState.CONTINUE : PlayState.STOP;
     }
 
-    private PlayState moveAnimationPredicate(AnimationEvent<CrocodileEntity> event) {
+    private PlayState moveAnimationPredicate(AnimationEvent<SaltWaterCrocodileEntity> event) {
         movementAnimations.forEach((anim) -> anim.checkAnimation(this, event));
         return PlayState.CONTINUE;
     }
@@ -160,9 +160,9 @@ public class CrocodileEntity extends Animal implements IAnimatable {
     }
 
     static class CrocGoToWaterGoal extends MoveToBlockGoal {
-        private final CrocodileEntity animal;
+        private final SaltWaterCrocodileEntity animal;
 
-        CrocGoToWaterGoal(CrocodileEntity p_30262_, double p_30263_) {
+        CrocGoToWaterGoal(SaltWaterCrocodileEntity p_30262_, double p_30263_) {
             super(p_30262_, p_30262_.isBaby() ? 2.0D : p_30263_, 24);
             this.animal = p_30262_;
             this.verticalSearchStart = -1;
@@ -200,9 +200,9 @@ public class CrocodileEntity extends Animal implements IAnimatable {
     }
 
     static class CrocMoveControl extends MoveControl {
-        private final CrocodileEntity animal;
+        private final SaltWaterCrocodileEntity animal;
 
-        CrocMoveControl(CrocodileEntity p_30286_) {
+        CrocMoveControl(SaltWaterCrocodileEntity p_30286_) {
             super(p_30286_);
             this.animal = p_30286_;
         }
@@ -237,7 +237,7 @@ public class CrocodileEntity extends Animal implements IAnimatable {
     }
 
     static class CrocPathNavigation extends WaterBoundPathNavigation {
-        CrocPathNavigation(CrocodileEntity p_30294_, Level p_30295_) {
+        CrocPathNavigation(SaltWaterCrocodileEntity p_30294_, Level p_30295_) {
             super(p_30294_, p_30295_);
         }
 
@@ -259,9 +259,9 @@ public class CrocodileEntity extends Animal implements IAnimatable {
     }
 
     static class CrocRandomStrollGoal extends RandomStrollGoal {
-        private final CrocodileEntity animal;
+        private final SaltWaterCrocodileEntity animal;
 
-        CrocRandomStrollGoal(CrocodileEntity p_30303_, double p_30304_, int p_30305_) {
+        CrocRandomStrollGoal(SaltWaterCrocodileEntity p_30303_, double p_30304_, int p_30305_) {
             super(p_30303_, p_30304_, p_30305_);
             this.animal = p_30303_;
         }

@@ -4,7 +4,6 @@ import ca.lukegrahamlandry.critterpedia.ModMain;
 import ca.lukegrahamlandry.critterpedia.content.entity.*;
 import ca.lukegrahamlandry.critterpedia.content.init.EntityInit;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ambient.Bat;
@@ -30,7 +29,7 @@ event.put(EntityInit.MAN_O_WAR.get(), UpsidedownjellyEntity.createAttributes().b
         event.put(EntityInit.FLORIDA_HOG_FISH.get(), AbstractFish.createAttributes().build());
         event.put(EntityInit.BOW_HEAD_GUITAR_FISH.get(), AbstractFish.createAttributes().build());
         event.put(EntityInit.MANTA_RAY.get(), AbstractFish.createAttributes().build());
-        event.put(EntityInit.SALT_WATER_CROCODILE.get(), CrocodileEntity.createAttributes().build());
+        event.put(EntityInit.SALT_WATER_CROCODILE.get(), SaltWaterCrocodileEntity.createAttributes().build());
         event.put(EntityInit.PSYCHEDELIC_JELLY.get(), PsychedelicjellyEntity.createAttributes().build());
         event.put(EntityInit.UPSIDE_DOWN_JELLY.get(), UpsidedownjellyEntity.createAttributes().build());
         event.put(EntityInit.COMMON_SNAPPER.get(), CommonSnappingTurtleEntity.createMobAttributes().build());
