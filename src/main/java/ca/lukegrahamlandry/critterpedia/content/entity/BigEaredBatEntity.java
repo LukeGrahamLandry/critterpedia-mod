@@ -11,11 +11,11 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class MegaBatEntity extends Bat implements IAnimatable {
-    public MegaBatEntity(EntityType<? extends MegaBatEntity> p_27412_, Level p_27413_) {
+public class BigEaredBatEntity extends Bat implements IAnimatable {
+    public BigEaredBatEntity(EntityType<? extends Bat> p_27412_, Level p_27413_) {
         super(p_27412_, p_27413_);
     }
-  //add in the swoop down cool down near water and cool down while hanging
+
     @Override
     public void tick() {
         super.tick();

@@ -23,5 +23,15 @@
   "entity.critterpedia.Amazonian_swordtail": "Amazonian swordtail",
     "entity.critterpedia.amazon_puffer": "Amazon puffer",
   "entity.critterpedia.antarctic_krill": "Antarctic krill",
-  "entity.critterpedia.black_widow": "Black widow"
+  "entity.critterpedia.black_widow": "Black widow",
+  "entity.critterpedia.hammerhead_bat": "Hammerhead bat",
+  "entity.critterpedia.eastern_red_bat": "Eastern red bat",
+  "entity.critterpedia.chapins_free-tailed_bat": "Chapin's free-tailed bat",
+  "entity.critterpedia.spectral_bat": "Spectral bat",
+  "entity.critterpedia.golden_capped_flying_fox": "Golden-capped flying fox",
+  "entity.critterpedia.hoary_bat": "Hoary bat",
+  "entity.critterpedia.greater_horseshoe_bat": "Greater horseshoe bat",
+  "entity.critterpedia.spectacled_flying_fox": "Spectacled flying fox"
+
+
 }

@@ -11,8 +11,9 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class MicroBatEntity extends Bat implements IAnimatable {
-    public MicroBatEntity(EntityType<? extends MicroBatEntity> p_27412_, Level p_27413_) {
+public class GoldenCappedFlyingFoxEntity extends Bat implements IAnimatable {
+
+    public GoldenCappedFlyingFoxEntity(EntityType<? extends Bat> p_27412_, Level p_27413_) {
         super(p_27412_, p_27413_);
     }
 
@@ -41,10 +42,12 @@ public class MicroBatEntity extends Bat implements IAnimatable {
         data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
     }
 
+
     private AnimationFactory factory = new AnimationFactory(this);
     @Override
     public AnimationFactory getFactory() {
         return factory;
     }
 }
+
 

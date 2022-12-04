@@ -11,11 +11,11 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class ModdedBatEntity extends Bat implements IAnimatable {
-    public ModdedBatEntity(EntityType<? extends ModdedBatEntity> p_27412_, Level p_27413_) {
+public class HammerheadBatEntity extends Bat implements IAnimatable {
+    public HammerheadBatEntity(EntityType<? extends Bat> p_27412_, Level p_27413_) {
         super(p_27412_, p_27413_);
     }
-  //add in the swoop down cool down near water and cool down while hanging, wing flapping thing
+
     @Override
     public void tick() {
         super.tick();
@@ -48,3 +48,4 @@ public class ModdedBatEntity extends Bat implements IAnimatable {
         return factory;
     }
 }
+

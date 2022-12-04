@@ -1,305 +1,641 @@
+Keaka🦇
+#1606
+
+VoutVouniern — 11/04/2022 12:32 PM
+Oh interesting! Excluding the water idle I'm at $12 right now for this
+Keaka🦇 — 11/04/2022 12:33 PM
+okay cool beans, lmk what you want when you're finished up, I'll send another model if you'd like , I'll pay for this guy first
+just so I don't fall behind again
+VoutVouniern — 11/04/2022 12:40 PM
+Image
+Keaka🦇 — 11/04/2022 12:40 PM
+I like that Imma keep that
+but there's one pose I can't find many pictures or videos of
+where they stick they're necks out and sit to get a breathe
+Image
+Image
+best examples
+VoutVouniern — 11/04/2022 12:49 PM
+Sorta like this?
+Image
+Keaka🦇 — 11/04/2022 1:17 PM
+slower neck movement but poggers!
+VoutVouniern — 11/04/2022 2:27 PM
+Image
+Keaka🦇 — 11/04/2022 6:03 PM
+Perfect
+How much do I owe ya
+VoutVouniern — 11/04/2022 6:05 PM
+$20?
+Keaka🦇 — 11/04/2022 6:06 PM
+Sure beans
+Whats your paypal?
+VoutVouniern — 11/04/2022 6:07 PM
+TheUlt1mateGuy.jk@gmail.com
+Keaka🦇
+pinned
+a message
+to this channel. See all
+pinned messages
+.
+— 11/04/2022 6:08 PM
+Keaka🦇 — 11/04/2022 7:07 PM
+it's not coming up
+:0
+VoutVouniern — 11/04/2022 7:40 PM
+Yours has an illuminati profile pic right? I’m fairly sure that’s yours
+Keaka🦇 — 11/04/2022 7:54 PM
+yeah
+lol
+VoutVouniern — 11/04/2022 7:57 PM
+Mind if i try requesting from you?
+Keaka🦇 — 11/04/2022 8:06 PM
+sure
+VoutVouniern — 11/04/2022 8:16 PM
+Attachment file type: archive
+turtle.zip
+7.70 KB
+Keaka🦇 — 11/04/2022 8:23 PM
+Thank you
+what time is it for you
+VoutVouniern — 11/04/2022 8:27 PM
+Past 8pm
+Keaka🦇 — 11/04/2022 8:31 PM
+oh okay
+eastern?
+VoutVouniern — 11/04/2022 8:31 PM
+Yeah
+Keaka🦇 — 11/04/2022 8:32 PM
+okay cool
+I have to add that to my list
+I try to keep track of this stuff for like, best time to contact
+VoutVouniern — 11/04/2022 8:33 PM
+I see
+Keaka🦇 — 11/04/2022 8:37 PM
+Yeah, I'm trying to be organized
+Keaka🦇 — 11/08/2022 8:47 AM
+how are you
+VoutVouniern — 11/08/2022 11:09 AM
+Good, you?
+Keaka🦇 — 11/08/2022 11:32 AM
+I'm pretty okay
+Keaka🦇 — 11/13/2022 5:32 PM
+Hey i got some new stuff for ya
+VoutVouniern — 11/13/2022 5:42 PM
+Alright, what kinds of stuff?
+Keaka🦇 — 11/13/2022 5:43 PM
+i got a couple of animals that need animations
+and I need to add a few animation to some stuff you've done
+I just realized I forgot flopping around animations for water breathing animals
+VoutVouniern — 11/13/2022 5:46 PM
+Oh yeah, that would be good for them to have
+Keaka🦇 — 11/13/2022 5:48 PM
+yeah they just moved around awkwardly
+atm
+do you think we'd be able to have a universal movement set for smaller fish that basically have the same mod layout?
+model**
+VoutVouniern — 11/13/2022 5:49 PM
+Sure, as long as their bones all have the same name between every fish (like their tail bones all being named “tail” for example)
+Keaka🦇 — 11/13/2022 5:51 PM
+they're will be variants of smaller fish I'll just pay ya when that comes up. but that sounds like a plan
+Keaka🦇 — 11/13/2022 6:15 PM
+Attachment file type: archive
+spiders_1.zip
+13.97 KB
+Keaka🦇 — 11/13/2022 6:25 PM
+these aren't fish but they are the only bbmodels I have on hand
+VoutVouniern — 11/13/2022 6:26 PM
+Gotcha. I'm working on the shark & jellyfish flopping anims rn so I'll get to the spiders afterwards. What anims do they need?
+VoutVouniern — 11/13/2022 6:41 PM
+Floppin
+Image
+Image
+Image
+Image
+Keaka🦇 — 11/13/2022 6:41 PM
+oh my gosh
+these are amazing
+VoutVouniern — 11/13/2022 6:57 PM
+Thanks, here's the new anim files
 {
-	"format_version": "1.8.0",
-	"animations": {
-		"animation.model.new": {
-			"loop": true,
-			"bones": {
-				"jaw": {
-					"rotation": {
-						"vector": [57.5, 0, 0]
-					}
-				}
-			}
-		},
-		"animation.model.new2": {
-			"loop": true,
-			"animation_length": 0.92,
-			"bones": {
-				"body": {
-					"rotation": {
-						"0.0": {
-							"vector": [-32.5, 0, 0]
-						},
-						"0.92": {
-							"vector": [-32.5, 0, 0]
-						}
-					},
-					"position": {
-						"0.0": {
-							"vector": [0, 30, 0]
-						},
-						"0.92": {
-							"vector": [0, 30, 0]
-						}
-					}
-				},
-				"body2": {
-					"rotation": {
-						"0.0": {
-							"vector": [-32.89913, 12.6796, 31.0129]
-						},
-						"0.32": {
-							"vector": [-32.89913, -12.67956, -18.74227]
-						},
-						"0.92": {
-							"vector": [-32.89913, 12.6796, 31.0129]
-						}
-					}
-				},
-				"tail": {
-					"rotation": {
-						"0.0": {
-							"vector": [67.47272, 26.09367, 31.0129]
-						},
-						"0.32": {
-							"vector": [67.47272, 26.09367, -31.01289]
-						},
-						"0.92": {
-							"vector": [67.47272, 26.09367, 31.0129]
-						}
-					}
-				},
-				"left_flipper": {
-					"rotation": {
-						"vector": [75, 0, 0]
-					}
-				},
-				"right_flipper": {
-					"rotation": {
-						"vector": [57.5, 0, 0]
-					}
-				},
-				"head": {
-					"rotation": {
-						"0.0": {
-							"vector": [35, 0, 0]
-						},
-						"0.92": {
-							"vector": [35, 0, 0]
-						}
-					}
-				}
-			}
-		},
-		"jump": {
-			"animation_length": 1,
-			"bones": {
-				"body": {
-					"rotation": {
-						"vector": ["query.pitch_speed*-7.5", "math.sin(72+query.anim_time*720)*5", 0]
-					}
-				},
-				"body2": {
-					"rotation": {
-						"vector": [0, "math.sin(144+query.anim_time*720)*-5", 0]
-					}
-				},
-				"tail": {
-					"rotation": {
-						"vector": [0, "math.sin(216+query.anim_time*720)*15", 0]
-					}
-				},
-				"tailtip": {
-					"rotation": {
-						"vector": [0, "math.sin(288+query.anim_time*720)*5", 0]
-					}
-				},
-				"left_flipper": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*720)*5", 0, 0]
-					}
-				},
-				"right_flipper": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*720)*-5", 0, 0]
-					}
-				},
-				"head": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0]
-						},
-						"0.4": {
-							"vector": [-10, "math.sin(36+query.anim_time*720)*-5", 0],
-							"easing": "easeInOutSine"
-						},
-						"0.8": {
-							"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0],
-							"easing": "easeInExpo"
-						}
-					}
-				},
-				"jaw": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [57.5, 0, 0],
-							"easing": "easeInOutSine"
-						},
-						"0.86": {
-							"vector": [0, 0, 0],
-							"easing": "easeInExpo"
-						}
-					}
-				}
-			}
-		},
-		"jump2": {
-			"animation_length": 1,
-			"bones": {
-				"body": {
-					"rotation": {
-						"vector": ["query.pitch_speed*-7.5", "math.sin(72+query.anim_time*720)*5", 0]
-					}
-				},
-				"body2": {
-					"rotation": {
-						"vector": [0, "math.sin(144+query.anim_time*720)*-5", 0]
-					}
-				},
-				"tail": {
-					"rotation": {
-						"vector": [0, "math.sin(216+query.anim_time*720)*15", 0]
-					}
-				},
-				"tailtip": {
-					"rotation": {
-						"vector": [0, "math.sin(288+query.anim_time*720)*5", 0]
-					}
-				},
-				"left_flipper": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*720)*5", 0, 0]
-					}
-				},
-				"right_flipper": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*720)*-5", 0, 0]
-					}
-				},
-				"head": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0]
-						},
-						"0.4": {
-							"vector": [-10, "math.sin(36+query.anim_time*720)*-5", 0],
-							"easing": "easeInOutSine"
-						},
-						"0.8": {
-							"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0],
-							"easing": "easeInExpo"
-						}
-					}
-				},
-				"jaw": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [57.5, 0, 0],
-							"easing": "easeInOutSine"
-						},
-						"0.9": {
-							"vector": [0, 0, 0],
-							"easing": "easeInExpo"
-						}
-					}
-				},
-				"root": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*360)*-60", 0, 0]
-					},
-					"position": {
-						"vector": [0, "-64+math.cos(query.anim_time*360)*-64", "math.lerp(64,-64,query.anim_time)"]
-					}
-				}
-			}
-		},
-		"swim": {
-			"loop": true,
-			"animation_length": 1.5,
-			"bones": {
-				"body": {
-					"rotation": {
-						"vector": ["query.pitch_speed*-7.5", "math.sin(72+query.anim_time*480)*5", 0]
-					}
-				},
-				"body2": {
-					"rotation": {
-						"vector": [0, "math.sin(144+query.anim_time*480)*-5", 0]
-					}
-				},
-				"tail": {
-					"rotation": {
-						"vector": [0, "math.sin(216+query.anim_time*480)*15", 0]
-					}
-				},
-				"tailtip": {
-					"rotation": {
-						"vector": [0, "math.sin(288+query.anim_time*480)*5", 0]
-					}
-				},
-				"left_flipper": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*480)*5", 0, 0]
-					}
-				},
-				"right_flipper": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*480)*-5", 0, 0]
-					}
-				},
-				"head": {
-					"rotation": {
-						"vector": [0, "math.sin(36+query.anim_time*480)*-5", 0]
-					}
-				},
-				"jaw": {
-					"rotation": {
-						"vector": ["5+math.cos(query.anim_time*240)*-5", 0, 0]
-					}
-				}
-			}
-		},
-		"bite": {
-			"animation_length": 1,
-			"bones": {
-				"head": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.4": {
-							"vector": [-10, 0, 0],
-							"easing": "easeInOutSine"
-						},
-						"0.8": {
-							"vector": [0, 0, 0],
-							"easing": "easeInExpo"
-						}
-					}
-				},
-				"jaw": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [57.5, 0, 0],
-							"easing": "easeInOutSine"
-						},
-						"0.9": {
-							"vector": [0, 0, 0],
-							"easing": "easeInExpo"
-						}
-					}
-				}
-			}
-		}
-	},
-	"geckolib_format_version": 2
+"format_version": "1.8.0",
+"animations": {
+"animation.model.new2": {
+"loop": true,
+"animation_length": 0.92,
+Expand
+shork.animation.json
+9 KB
+{
+"format_version": "1.8.0",
+"animations": {
+"animation.KritterPediaManOWar.idle": {
+"loop": true,
+"animation_length": 4,
+Expand
+KritterPediaManOWar.animation.json
+4 KB
+{
+"format_version": "1.8.0",
+"animations": {
+"animation.PsychedelicJelly.idle": {
+"loop": true,
+"animation_length": 4,
+Expand
+PsychedelicJelly.animation.json
+4 KB
+{
+"format_version": "1.8.0",
+"animations": {
+"animation.UpsidedownJelly.idle": {
+"loop": true,
+"animation_length": 4,
+Expand
+UpsidedownJelly.animation.json
+5 KB
+Keaka🦇 — 11/13/2022 7:07 PM
+ay, poggers
+VoutVouniern — 11/13/2022 7:34 PM
+I’ll do the spiders tomorrow, do they need anything besides idle & walk?
+Keaka🦇 — 11/13/2022 11:59 PM
+Scorpion sting, web building for black widow and garden spider, idk something cool for the tarantula, like something it can do occasionally when it idles
+VoutVouniern — 11/14/2022 12:00 AM
+Ik in animal crossing when you get close to a tarantula they stand on their back legs and put their front legs up, probably an intimidation tactic
+Might be a cool sometimes idle, yeah?
+Keaka🦇 — 11/14/2022 12:01 AM
+that'd be sick
+kinda hissing
+Keaka🦇 — 11/14/2022 7:22 AM
+can you record your animation process so that way I can start to get an idea of how to do it, If not I understand
+VoutVouniern — 11/14/2022 11:29 AM
+Probably not, no. But I can send you to a Molang server with resources that could teach you better than I'd be able to https://discord.gg/T89c9NHb
+Keaka🦇 — 11/14/2022 11:33 AM
+oh awesome!
+Keaka🦇 — 11/14/2022 11:42 AM
+do you use code to animate them?
+VoutVouniern — 11/14/2022 11:43 AM
+Mostly, yes. Only things that don't "loop" I usually don't
+Keaka🦇 — 11/14/2022 11:48 AM
+oh interesting, I thought you used the gecko lib stuff
+VoutVouniern — 11/14/2022 11:48 AM
+Yeah, geckolib supports molang
+Keaka🦇 — 11/14/2022 11:49 AM
+I thought it used like key frames or something like that
+VoutVouniern — 11/14/2022 11:49 AM
+It can do both, in fact you put molang equations in keyframes
+Plus easing curves can be added to keyframes for smoother animation
+Keaka🦇 — 11/14/2022 11:50 AM
+really? I didn't know it was done like that, I assumed everyone animated through the wiggle stuff in geckolib
+VoutVouniern — 11/14/2022 12:19 PM
+Spiders done
+They all use the same animation file too, with the garden spider and tarantula just needing a different walk cycle than the others
+Image
+Image
+Image
+Image
+Image
+Image
+Keaka🦇 — 11/14/2022 12:58 PM
+Oh hell yeah these look poggers
+VoutVouniern — 11/14/2022 1:02 PM
+Cool! $35 for everything (including fish flops)?
+Keaka🦇 — 11/14/2022 1:04 PM
+sounds good to me
+lmk if ya got ot
+VoutVouniern — 11/14/2022 1:07 PM
+I did!
+Attachment file type: archive
+spiders.zip
+30.35 KB
+Keaka🦇 — 11/14/2022 1:09 PM
+okay bet!
+thank you
+Keaka🦇 — 11/15/2022 7:45 AM
+good morning!
+can you send me a gif of the walking animations for stuff
+VoutVouniern — 11/15/2022 11:37 AM
+Image
+Image
+Image
+Keaka🦇 — 11/15/2022 12:03 PM
+:33
+This makes me happy
+VoutVouniern — 11/15/2022 12:04 PM
+I’m gonna be honest, I think the black widow and tarantula are really cute
+Keaka🦇 — 11/15/2022 12:05 PM
+good!
+not too realistic
+Keaka🦇 — Today at 7:09 PM
+do you price to size?
+VoutVouniern — Today at 7:25 PM
+I price to time, actually
+Keaka🦇 — Today at 7:26 PM
+oh interesting
+a lot of people do by size
+VoutVouniern — Today at 7:29 PM
+Yeah a large dragon or smth that only needs a simple flight animation takes less time than a small dog that needs a super complex animation so size isn't as important when working on animations in particular
+Keaka🦇 — Today at 7:35 PM
+really, I'm working on a quetzalcoatlus and I wasn't sure if it'd be more expensive for it cause it's larger
+VoutVouniern — Today at 7:39 PM
+oh yeah, the really big pterosaur
+It just comes down to how many bones it needs to animate right, which depending on how it's made probably wouldn't be that many
+Keaka🦇 — Today at 9:13 PM
+Image
+﻿
+{
+"format_version": "1.8.0",
+"animations": {
+"animation.model.new2": {
+"loop": true,
+"animation_length": 0.92,
+"bones": {
+"body": {
+"rotation": {
+"0.0": {
+"vector": [-32.5, 0, 0]
+},
+"0.92": {
+"vector": [-32.5, 0, 0]
 }
+},
+"position": {
+"0.0": {
+"vector": [0, 30, 0]
+},
+"0.92": {
+"vector": [0, 30, 0]
+}
+}
+},
+"body2": {
+"rotation": {
+"0.0": {
+"vector": [-32.89913, 12.6796, 31.0129]
+},
+"0.32": {
+"vector": [-32.89913, -12.67956, -18.74227]
+},
+"0.92": {
+"vector": [-32.89913, 12.6796, 31.0129]
+}
+}
+},
+"tail": {
+"rotation": {
+"0.0": {
+"vector": [67.47272, 26.09367, 31.0129]
+},
+"0.32": {
+"vector": [67.47272, 26.09367, -31.01289]
+},
+"0.92": {
+"vector": [67.47272, 26.09367, 31.0129]
+}
+}
+},
+"left_flipper": {
+"rotation": {
+"vector": [75, 0, 0]
+}
+},
+"right_flipper": {
+"rotation": {
+"vector": [57.5, 0, 0]
+}
+},
+"head": {
+"rotation": {
+"0.0": {
+"vector": [35, 0, 0]
+},
+"0.92": {
+"vector": [35, 0, 0]
+}
+}
+}
+}
+},
+"swim": {
+"loop": true,
+"animation_length": 1.5,
+"bones": {
+"body": {
+"rotation": {
+"vector": ["query.pitch_speed*-7.5", "math.sin(72+query.anim_time*480)*5", 0]
+}
+},
+"body2": {
+"rotation": {
+"vector": [0, "math.sin(144+query.anim_time*480)*-5", 0]
+}
+},
+"tail": {
+"rotation": {
+"vector": [0, "math.sin(180+query.anim_time*480)*20", 0]
+}
+},
+"tailtip": {
+"rotation": {
+"vector": [0, "math.sin(288+query.anim_time*480)*5", 0]
+}
+},
+"left_flipper": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*480)*5", 0, 0]
+}
+},
+"right_flipper": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*480)*-5", 0, 0]
+}
+},
+"head": {
+"rotation": {
+"vector": [0, "math.sin(36+query.anim_time*480)*-5", 0]
+}
+},
+"jaw": {
+"rotation": {
+"vector": ["5+math.cos(query.anim_time*240)*-5", 0, 0]
+}
+}
+}
+},
+"swim2": {
+"loop": true,
+"animation_length": 2,
+"bones": {
+"body": {
+"rotation": {
+"vector": ["query.pitch_speed*-7.5", "math.sin(72+query.anim_time*360)*7.5", 0]
+}
+},
+"body2": {
+"rotation": {
+"vector": [0, "math.sin(144+query.anim_time*360)*-7.5", 0]
+}
+},
+"tail": {
+"rotation": {
+"vector": [0, "math.sin(180+query.anim_time*360)*20", 0]
+}
+},
+"tailtip": {
+"rotation": {
+"vector": [0, "math.sin(288+query.anim_time*360)*7.5", 0]
+}
+},
+"left_flipper": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*360)*5", 0, 0]
+}
+},
+"right_flipper": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*360)*-5", 0, 0]
+}
+},
+"head": {
+"rotation": {
+"vector": [0, "math.sin(36+query.anim_time*360)*-7.5", 0]
+}
+},
+"jaw": {
+"rotation": {
+"vector": ["5+math.cos(query.anim_time*180)*-5", 0, 0]
+}
+}
+}
+},
+"bite": {
+"animation_length": 1,
+"bones": {
+"head": {
+"rotation": {
+"0.0": {
+"vector": [0, 0, 0]
+},
+"0.4": {
+"vector": [-10, 0, 0],
+"easing": "easeInOutSine"
+},
+"0.8": {
+"vector": [0, 0, 0],
+"easing": "easeInExpo"
+}
+}
+},
+"jaw": {
+"rotation": {
+"0.0": {
+"vector": [0, 0, 0]
+},
+"0.5": {
+"vector": [57.5, 0, 0],
+"easing": "easeInOutSine"
+},
+"0.9": {
+"vector": [0, 0, 0],
+"easing": "easeInExpo"
+}
+}
+}
+}
+},
+"jump": {
+"animation_length": 1,
+"bones": {
+"body": {
+"rotation": {
+"vector": ["query.pitch_speed*-7.5", "math.sin(72+query.anim_time*720)*5", 0]
+}
+},
+"body2": {
+"rotation": {
+"vector": [0, "math.sin(144+query.anim_time*720)*-5", 0]
+}
+},
+"tail": {
+"rotation": {
+"vector": [0, "math.sin(216+query.anim_time*720)*15", 0]
+}
+},
+"tailtip": {
+"rotation": {
+"vector": [0, "math.sin(288+query.anim_time*720)*5", 0]
+}
+},
+"left_flipper": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*720)*5", 0, 0]
+}
+},
+"right_flipper": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*720)*-5", 0, 0]
+}
+},
+"head": {
+"rotation": {
+"0.0": {
+"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0]
+},
+"0.4": {
+"vector": [-10, "math.sin(36+query.anim_time*720)*-5", 0],
+"easing": "easeInOutSine"
+},
+"0.8": {
+"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0],
+"easing": "easeInExpo"
+}
+}
+},
+"jaw": {
+"rotation": {
+"0.0": {
+"vector": [0, 0, 0]
+},
+"0.5": {
+"vector": [57.5, 0, 0],
+"easing": "easeInOutSine"
+},
+"0.86": {
+"vector": [0, 0, 0],
+"easing": "easeInExpo"
+}
+}
+}
+}
+},
+"jump2": {
+"animation_length": 1,
+"bones": {
+"body": {
+"rotation": {
+"vector": ["query.pitch_speed*-7.5", "math.sin(72+query.anim_time*720)*5", 0]
+}
+},
+"body2": {
+"rotation": {
+"vector": [0, "math.sin(144+query.anim_time*720)*-5", 0]
+}
+},
+"tail": {
+"rotation": {
+"vector": [0, "math.sin(216+query.anim_time*720)*15", 0]
+}
+},
+"tailtip": {
+"rotation": {
+"vector": [0, "math.sin(288+query.anim_time*720)*5", 0]
+}
+},
+"left_flipper": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*720)*5", 0, 0]
+}
+},
+"right_flipper": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*720)*-5", 0, 0]
+}
+},
+"head": {
+"rotation": {
+"0.0": {
+"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0]
+},
+"0.4": {
+"vector": [-10, "math.sin(36+query.anim_time*720)*-5", 0],
+"easing": "easeInOutSine"
+},
+"0.8": {
+"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0],
+"easing": "easeInExpo"
+}
+}
+},
+"jaw": {
+"rotation": {
+"0.0": {
+"vector": [0, 0, 0]
+},
+"0.5": {
+"vector": [57.5, 0, 0],
+"easing": "easeInOutSine"
+},
+"0.9": {
+"vector": [0, 0, 0],
+"easing": "easeInExpo"
+}
+}
+},
+"root": {
+"rotation": {
+"vector": ["math.sin(query.anim_time*360)*-60", 0, 0]
+},
+"position": {
+"vector": [0, "-64+math.cos(query.anim_time*360)*-64", "math.lerp(64,-64,query.anim_time)"]
+}
+}
+}
+},
+"flop": {
+"loop": true,
+"animation_length": 0.5,
+"bones": {
+"body": {
+"rotation": {
+"vector": [0, "math.sin(72+query.anim_time*720)*5", 0]
+}
+},
+"body2": {
+"rotation": {
+"vector": [0, "math.sin(144+query.anim_time*720)*-5", 0]
+}
+},
+"tail": {
+"rotation": {
+"vector": [0, "math.sin(180+query.anim_time*720)*-10", 0]
+}
+},
+"tailtip": {
+"rotation": {
+"vector": [0, "math.sin(288+query.anim_time*720)*5", 0]
+}
+},
+"left_flipper": {
+"rotation": {
+"vector": [0, 0, -90]
+}
+},
+"right_flipper": {
+"rotation": {
+"vector": [0, 0, 90]
+}
+},
+"head": {
+"rotation": {
+"vector": [0, "math.sin(36+query.anim_time*720)*-5", 0]
+}
+},
+"jaw": {
+"rotation": {
+"vector": ["5+math.cos(query.anim_time*720)*-5", 0, 0]
+}
+},
+"root": {
+"rotation": {
+"vector": [0, "math.sin(-36+query.anim_time*720)*15", 90]
+},
+"position": {
+"vector": [0, "10+math.abs(math.sin(query.anim_time*360)*20)", 0]
+}
+}
+}
+}
+},
+"geckolib_format_version": 2
+}
+shork.animation.json
+9 KB

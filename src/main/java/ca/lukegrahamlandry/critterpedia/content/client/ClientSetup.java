@@ -26,12 +26,6 @@ import java.util.function.Supplier;
 public class ClientSetup {
     @SubscribeEvent
     public static void doSetup(FMLClientSetupEvent event) {
-        for (String rl : EntityInit.microbats){
-            byRL(rl, (ctx) -> new ModdedBatRender(ctx, (ctxx) -> new ModdedBatModel(ctxx, rl)));
-            for (String rl1 :EntityInit.megabats){
-                byRL(rl1, (ctx) -> new ModdedBatRender(ctx,(ctxx) -> new ModdedBatModel(ctxx, rl1)));
-            }
-        }
 
 
         EntityRenderers.register(EntityInit.FLY.get(), FlyGeoRender::new);
@@ -61,10 +55,14 @@ EntityRenderers.register(EntityInit.MOLE_CRICKET.get(), (ctx) -> new GenericGeoR
 EntityRenderers.register(EntityInit.NAPOLEON_WRASSE.get(), (ctx) -> new GenericGeoRender<>(ctx, "football_fish"));
 EntityRenderers.register(EntityInit.GREAT_WHITE_SHARK.get(), (ctx) -> new GenericGeoRender<>(ctx, "great_white_shark"));
 EntityRenderers.register(EntityInit.FOOTBALL_FISH.get(), (ctx) -> new GenericGeoRender<>(ctx, "football_fish"));
-
-
-
-
+EntityRenderers.register(EntityInit.BIG_EARED_BAT.get(), (ctx) -> new GenericGeoRender<>(ctx, "big_eared_bat"));
+EntityRenderers.register(EntityInit.CHAPIN_FREE_TAILED_BAT.get(), (ctx) -> new GenericGeoRender<>(ctx, "chapin_free_tailed_bat"));
+EntityRenderers.register(EntityInit.HOARY_BAT.get(), (ctx) -> new GenericGeoRender<>(ctx, "hoary_bat"));
+EntityRenderers.register(EntityInit.HAMMERHEAD_BAT.get(), (ctx) -> new GenericGeoRender<>(ctx, "hammerhead_bat"));
+EntityRenderers.register(EntityInit.GOLDEN_CAPPED_FLYING_FOX.get(), (ctx) -> new GenericGeoRender<>(ctx, "golden_capped_flying_fox"));
+EntityRenderers.register(EntityInit.EASTERN_RED_BAT.get(), (ctx) -> new GenericGeoRender<>(ctx, "eastern_red_bat"));
+EntityRenderers.register(EntityInit.SPECTRAL_BAT.get(), (ctx) -> new GenericGeoRender<>(ctx, "spectral_bat"));
+EntityRenderers.register(EntityInit.GREATER_HORSESHOE_BAT.get(), (ctx) -> new GenericGeoRender<>(ctx, "greater_horseshoe_bat"));
         // the string renders wrong
         EntityRenderers.register(EntityInit.BOBBER.get(), FishingHookRenderer::new);
     }
@@ -75,12 +73,7 @@ EntityRenderers.register(EntityInit.FOOTBALL_FISH.get(), (ctx) -> new GenericGeo
 
     @SubscribeEvent
     public static void layers(EntityRenderersEvent.RegisterLayerDefinitions event){
-        for (String rl : EntityInit.microbats){
-            makeLayer(event, rl, ModdedBatModel.getModelFor(rl));
-        }
-        for (String rl1 : EntityInit.megabats){
-            makeLayer(event, rl1, ModdedBatModel.getModelFor(rl1));
-        }
+
         event.registerLayerDefinition(FloridaHogFishModel.LAYER_LOCATION, FloridaHogFishModel::createBodyLayer);
         event.registerLayerDefinition(BowheadGuitarFishModel.LAYER_LOCATION, BowheadGuitarFishModel::createBodyLayer);
     }

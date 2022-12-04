@@ -1,7 +1,8 @@
 package ca.lukegrahamlandry.critterpedia.content.client.models;
 
 import ca.lukegrahamlandry.critterpedia.ModMain;
-import ca.lukegrahamlandry.critterpedia.content.entity.MegaBatEntity;
+
+import ca.lukegrahamlandry.critterpedia.content.entity.ModdedBatEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -15,7 +16,7 @@ import net.minecraft.util.Mth;
 
 import java.util.function.Supplier;
 
-public class ModdedBatModel extends EntityModel<MegaBatEntity> {
+public class ModdedBatModel extends EntityModel<ModdedBatEntity> {
     protected ModelPart root;
     private ModelPart Body;
     private ModelPart LeftWing;
@@ -59,54 +60,6 @@ public class ModdedBatModel extends EntityModel<MegaBatEntity> {
         poseStack.translate(0, 1, 0);
         this.root.render(poseStack, buffer, packedLight, packedOverlay);
     }
-
-    @Override
-    public void setupAnim(MegaBatEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        float f = ageInTicks;
-        float f1 = 0.3F;
-
-        float speed = 1.0F;
-        float degree = 1.0F;
-
-
-        if (entity.isResting()){
-            boolean isWeird = entity.getType().getRegistryName().getPath().equals("hoary_bat") || entity.getType().getRegistryName().getPath().equals("big_eared_bat");
-
-
-            if (isWeird) {
-                // gotta do animation
-
-            } else {
-                this.RightWing.zRot = - (degree * 5.0F) * f1 * 1;
-                this.LeftWing.zRot = - (degree * -5.0F) * f1 * 1;
-
-                this.RightWing.yRot = - (degree * 1.0F) * f1 * 1F;
-                this.LeftWing.yRot = - (degree * -1.0F) * f1 * 1;
-
-                this.RightWingTwo.yRot = - (degree * 5.0F) * f1 * 1.2F;
-                this.LeftWingTwo.yRot = - (degree * -5.0F) * f1 * 1.2F;
-            }
-
-        } else {
-            this.RightWing.zRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * 5.0F) * f1 * 0.5F;
-            this.RightWingTwo.yRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * 5.0F) * f1 * 0.5F;
-            this.RightWing.yRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * 1.0F) * f1 * 0.5F;
-            this.LeftWing.zRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * -5.0F) * f1 * 0.5F;
-            this.LeftWingTwo.yRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * -5.0F) * f1 * 0.5F;
-            this.LeftWing.yRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * -1.0F) * f1 * 0.5F;
-            this.Body.y = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * 1.0F) * f1 * 0.5F;
-            this.Body.xRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * 1.0F) * f1 * 0.5F;
-            this.Body.xRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * -1.0F) * f1 * 0.5F;
-            if (this.Head != null){
-                this.Head.y = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * -0.2F) * f1 * 0.5F;
-                this.Head.xRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * -0.2F) * f1 * 0.5F;
-            }
-            if (this.Legs != null){
-                this.Legs.xRot = Mth.cos((f * speed * 0.2F) + (float) Math.PI) * (degree * -1.0F) * f1 * 0.5F;
-            }
-        }
-    }
-
 
     public static Supplier<LayerDefinition> getModelFor(String rl){
         switch (rl){
@@ -206,5 +159,11 @@ public class ModdedBatModel extends EntityModel<MegaBatEntity> {
         }
 
         return null;
+    }
+
+
+    @Override
+    public void setupAnim(ModdedBatEntity pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+
     }
 }

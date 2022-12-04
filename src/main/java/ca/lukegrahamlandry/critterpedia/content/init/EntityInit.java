@@ -17,8 +17,8 @@ import java.util.List;
 public class EntityInit {
     public static final DeferredRegister<EntityType<?>> ENTITY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModMain.MOD_ID);
 
-    public static final String[] microbats = new String[]{ "eastern_red_bat", "hammer_head_bat", "hoary_bat", "big_eared_bat", "chapmins_free_tailed_bat", "greater_horseshoe_bat", "spectral_bat"};
-    public static final String[] megabats = new String[]{"spectacled_flying_fox", "golden_capped_flying_fox" };
+
+
 
     public static RegistryObject<EntityType<TriggerGuiFishingHook>> BOBBER = ENTITY.register("bobber", () -> EntityType.Builder.of((EntityType.EntityFactory<TriggerGuiFishingHook>) TriggerGuiFishingHook::new, MobCategory.MISC).sized(0.25F, 0.25F).build("bobber"));
 
@@ -50,27 +50,23 @@ public static RegistryObject<EntityType<NapoleonWrasseEntity>> NAPOLEON_WRASSE =
 public static RegistryObject<EntityType<GreatWhiteSharkEntity>> GREAT_WHITE_SHARK = ENTITY.register("great_white_shark", () -> EntityType.Builder.of(GreatWhiteSharkEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("great_white_shark"));
 public static RegistryObject<EntityType<FootballFishEntity>> FOOTBALL_FISH = ENTITY.register("football_fish", () -> EntityType.Builder.of(FootballFishEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("football_fish"));
 
-public static RegistryObject<EntityType<MegaBatEntity>> MEGA_BAT = ENTITY.register("mega_bat", () -> EntityType.Builder.of(MegaBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("mega_bat"));
-public static RegistryObject<EntityType<MicroBatEntity>> MICRO_BAT = ENTITY.register("micro_bat", () -> EntityType.Builder.of(MicroBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("micro_bat"));
-
-
-
-
-
-
+public static RegistryObject<EntityType<ThresherSharkEntity>> THRESHER_SHARK = ENTITY.register("thresher_shark", () -> EntityType.Builder.of(ThresherSharkEntity::new, MobCategory.WATER_CREATURE).sized(0.5F, 0.5F).build("thresher_shark"));
+public static RegistryObject<EntityType<SpectacledFlyingFoxEntity>> SPECTACLED_FLYING_FOX = ENTITY.register("spectacled_flying_fox", () -> EntityType.Builder.of(SpectacledFlyingFoxEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("spectacled_flying_fox"));
+public static RegistryObject<EntityType<HoaryBatEntity>> HOARY_BAT = ENTITY.register("hoary_bat", () -> EntityType.Builder.of(HoaryBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("hoary_bat"));
+public static RegistryObject<EntityType<EasternRedBatEntity>> EASTERN_RED_BAT = ENTITY.register("eastern_red_bat", () -> EntityType.Builder.of(EasternRedBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("eastern_red_bat"));
+public static RegistryObject<EntityType<GreaterHorseshoeBatEntity>> GREATER_HORSESHOE_BAT = ENTITY.register("greater_horseshoe_bat", () -> EntityType.Builder.of(GreaterHorseshoeBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("greater_horseshoe_bat"));
+public static RegistryObject<EntityType<HammerheadBatEntity>> HAMMERHEAD_BAT = ENTITY.register("hammerhead_bat", () -> EntityType.Builder.of(HammerheadBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("hammerhead_bat"));
+public static RegistryObject<EntityType<BigEaredBatEntity>> BIG_EARED_BAT = ENTITY.register("big_eared_bat", () -> EntityType.Builder.of(BigEaredBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("big_eared_bat"));
+public static RegistryObject<EntityType<SpectralBatEntity>> SPECTRAL_BAT = ENTITY.register("spectral_bat", () -> EntityType.Builder.of(SpectralBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("spectral_bat"));
+public static RegistryObject<EntityType<ChapinFreeTailedBatEntity>> CHAPIN_FREE_TAILED_BAT = ENTITY.register("chapin_free-tailed_bat", () -> EntityType.Builder.of(ChapinFreeTailedBatEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("chapin_free-tailed_bat"));
+public static RegistryObject<EntityType<GoldenCappedFlyingFoxEntity>> GOLDEN_CAPPED_FLYING_FOX = ENTITY.register("golden_capped_flying_fox", () -> EntityType.Builder.of(GoldenCappedFlyingFoxEntity::new, MobCategory.CREATURE).sized(0.5F, 0.5F).build("golden_capped_flying_fox"));
     public static List<ResourceLocation> smallFish = new ArrayList<>();
 
     static {
         List<RegistryObject<? extends EntityType<? extends LivingEntity>>> fishObj = Arrays.asList(BOW_HEAD_GUITAR_FISH, FLORIDA_HOG_FISH);
         fishObj.forEach((obj) -> smallFish.add(obj.getId()));
 
-        for (String rl : microbats) {
-            ENTITY.register(rl, () -> EntityType.Builder.of(MicroBatEntity::new, MobCategory.CREATURE).sized(EntityType.BAT.getWidth(), EntityType.BAT.getHeight()).build(rl));
-        }
-
-        for (String rl1: megabats) {
-            ENTITY.register(rl1, () -> EntityType.Builder.of(MegaBatEntity::new, MobCategory.CREATURE).sized(EntityType.BAT.getWidth(), EntityType.BAT.getHeight()).build(rl1));
 
         }
     }
-}
+
